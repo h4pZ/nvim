@@ -2,8 +2,8 @@
 let s:gui00        = "1c1c26"
 let g:base16_gui00 = "1c1c26"
 
-let s:gui01        = "111217"
-let g:base16_gui01 = "111217"
+let s:gui01        = "1c1c26"
+let g:base16_gui01 = "1c1c26"
 
 let s:gui02        = "5d5d5d"
 let g:base16_gui02 = "5d5d5d"
