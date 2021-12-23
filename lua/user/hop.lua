@@ -1,0 +1,5 @@
+require'hop'.setup()
+vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
+vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
+vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
+vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')

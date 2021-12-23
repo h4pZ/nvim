@@ -58,6 +58,9 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "unblevable/quick-scope"
+  use "karb94/neoscroll.nvim"
+  use "folke/todo-comments.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -80,9 +83,17 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
+  use "simrat39/symbols-outline.nvim"
+  use 'ray-x/lsp_signature.nvim'
+  use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+
+  -- Hoper
+  use 'phaazon/hop.nvim'
 
   -- Treesitter
   use {
@@ -93,6 +104,10 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+
+-- Colors :)
+use 'norcalli/nvim-colorizer.lua'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
