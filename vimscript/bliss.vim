@@ -420,10 +420,13 @@ hi DiagnosticSignHint  guifg=#a1d5f7 guibg=#1c1c26
 hi DiagnosticSignInfo  guifg=#ffffff guibg=#1c1c26
 
 " For the border
-hi FloatBorder guifg=#aeb1ff
+hi FloatBorder guifg=#aeb1ff 
 
 " For Dap
 hi DapBreakpoint guifg=#feb8bf guibg=#1c1c26
+
+" For floating windows like whichkey
+hi NormalFloat guibg=#111217
 
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
