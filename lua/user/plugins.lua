@@ -89,6 +89,12 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
+
+  -- Debugger.
+  use "mfussenegger/nvim-dap"
+  use "mfussenegger/nvim-dap-python"
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 

@@ -408,6 +408,23 @@ delf <sid>hi
 
 hi Normal guibg=#111217
 
+" Gitsigns colors
+hi GitSignsAdd guifg=#a8f9c4 guibg=#1c1c26
+hi GitSignsChange guifg=#aeb1ff guibg=#1c1c26
+hi GitSignsDelete guifg=#feb8bf guibg=#1c1c26
+
+" Signs handlers.lua file
+hi DiagnosticSignError guifg=#feb8bf guibg=#1c1c26
+hi DiagnosticSignWarn  guifg=#ffbdf1 guibg=#1c1c26
+hi DiagnosticSignHint  guifg=#a1d5f7 guibg=#1c1c26
+hi DiagnosticSignInfo  guifg=#ffffff guibg=#1c1c26
+
+" For the border
+hi FloatBorder guifg=#aeb1ff
+
+" For Dap
+hi DapBreakpoint guifg=#feb8bf guibg=#1c1c26
+
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
