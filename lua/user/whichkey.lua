@@ -85,6 +85,7 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["m"] = { "<cmd>Glow<cr>", "Markdown Preview" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -111,6 +112,9 @@ local mappings = {
     u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
     p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
     q = { "<cmd>lua require'dapui'.close()<cr>", "Quit (dapui)" },
+    m = { "<cmd>lua require'dap-python'.test_method()<cr>", "Test Method" },
+    a = { "<cmd>lua require'dap-python'.test_class()<cr>", "Test Class" },
+    s = { "<cmd>lua require'dap-python'.debug_selection()<cr>", "Debug Selection" },
   },
 
   p = {
