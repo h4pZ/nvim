@@ -197,6 +197,11 @@ local mappings = {
     H = { "<cmd>HopWord<cr>", "Hop to word" },
   },
 
+  T = {
+    name = "Hop",
+    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" },
+    h = { "<cmd>TodoTelescope<cr>", "TodoTelescope" },
+  },
 
   t = {
     name = "Terminal",

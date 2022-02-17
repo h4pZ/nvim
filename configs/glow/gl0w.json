@@ -89,7 +89,7 @@
   },
   "image_text": {
     "color": "243",
-    "format": "Image: {{.text}} ¿"
+    "format": "Image: {{.text}} ->"
   },
   "code": {
     "prefix": " ",
