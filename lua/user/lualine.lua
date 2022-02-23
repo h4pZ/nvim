@@ -1,3 +1,10 @@
+local custom_ayu_mirage = require'lualine.themes.ayu_mirage'
+
+custom_ayu_mirage.normal.a.bg = "#aeb1ff"
+custom_ayu_mirage.insert.a.bg = "#8cd7ff"
+custom_ayu_mirage.visual.a.bg = "#a8f9c4"
+custom_ayu_mirage.replace.a.bg = "#f70067"
+
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
@@ -65,7 +72,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "palenight",
+		theme = custom_ayu_mirage,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

@@ -416,7 +416,7 @@ hi GitSignsDelete guifg=#feb8bf guibg=#1c1c26
 " Signs handlers.lua file
 hi DiagnosticSignError guifg=#feb8bf guibg=#1c1c26
 hi DiagnosticSignWarn  guifg=#ffbdf1 guibg=#1c1c26
-hi DiagnosticSignHint  guifg=#a1d5f7 guibg=#1c1c26
+hi DiagnosticSignHint  guifg=#8cd7ff guibg=#1c1c26
 hi DiagnosticSignInfo  guifg=#ffffff guibg=#1c1c26
 
 " For the border
@@ -427,6 +427,29 @@ hi DapBreakpoint guifg=#feb8bf guibg=#1c1c26
 
 " For floating windows like whichkey
 hi NormalFloat guibg=#111217
+
+" Visual selection
+hi Visual guibg=#424259
+
+" For dap-ui bars / colors.
+hi lualine_a_inactive guifg=#8cd7ff
+hi lualine_b_inactive guifg=#8cd7ff
+hi lualine_c_inactive guifg=#8cd7ff
+hi DapUIScope guifg=#8cd7ff
+hi DapUIType guifg=#aeb1ff
+hi DapUIModifiedValue guifg=#8cd7ff
+hi DapUIDecoration guifg=#8cd7ff
+hi DapUIThread guifg=#a8f9c4
+hi DapUIStoppedThread guifg=#8cd7ff
+hi DapUISource guifg=#aeb1ff
+hi DapUILineNumber guifg=#8cd7ff
+hi DapUIFloatBorder guifg=#f70067
+hi DapUIWatchesValue guifg=#a8f9c4
+hi DapUIBreakpointsPath guifg=#8cd7ff
+hi DapUIBreakpointsInfo guifg=#a8f9c4
+hi DapUIBreakpointsCurrentLine guifg=#a8f9c4
+hi DapUIBreakpointsLine guifg=#8cd7ff
+
 
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
