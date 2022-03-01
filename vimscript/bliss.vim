@@ -423,7 +423,7 @@ hi DiagnosticSignInfo  guifg=#ffffff guibg=#1c1c26
 hi FloatBorder guifg=#aeb1ff 
 
 " For Dap
-hi DapBreakpoint guifg=#feb8bf guibg=#1c1c26
+hi DapBreakpoint guifg=#f70067 guibg=#1c1c26
 
 " For floating windows like whichkey
 hi NormalFloat guibg=#111217

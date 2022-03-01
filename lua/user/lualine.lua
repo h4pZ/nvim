@@ -1,8 +1,8 @@
 local custom_ayu_mirage = require'lualine.themes.ayu_mirage'
 
-custom_ayu_mirage.normal.a.bg = "#aeb1ff"
-custom_ayu_mirage.insert.a.bg = "#8cd7ff"
-custom_ayu_mirage.visual.a.bg = "#a8f9c4"
+custom_ayu_mirage.normal.a.bg = "#a8f9c4"
+custom_ayu_mirage.insert.a.bg = "#aeb1ff"
+custom_ayu_mirage.visual.a.bg = "#8cd7ff"
 custom_ayu_mirage.replace.a.bg = "#f70067"
 
 local status_ok, lualine = pcall(require, "lualine")

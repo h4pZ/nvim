@@ -117,6 +117,14 @@ return packer.startup(function(use)
   -- Markdown preview.
   use "ellisonleao/glow.nvim"
 
+  -- Lines for colored lines modes.
+  use({
+    'mvllow/modes.nvim',
+    config = function()
+      vim.opt.cursorline = true
+      require('modes').setup()
+    end
+  })
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

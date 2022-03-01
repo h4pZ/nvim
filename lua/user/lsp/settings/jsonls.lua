@@ -175,12 +175,12 @@ local function extend(tab1, tab2)
   return tab1
 end
 
-local extended_schemas = extend(schemas, default_schemas)
+-- local extended_schemas = extend(schemas, default_schemas)
 
 local opts = {
   settings = {
     json = {
-      schemas = extended_schemas,
+      schemas = schemas,
     },
   },
   setup = {
