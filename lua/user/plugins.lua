@@ -111,6 +111,9 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- Documentation
+  use {'kkoomen/vim-doge', run = ":call doge#install()"}
+
   -- Colors :)
   use 'norcalli/nvim-colorizer.lua'
 

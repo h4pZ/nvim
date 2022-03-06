@@ -118,6 +118,12 @@ local mappings = {
     s = { "<cmd>lua require'dap-python'.debug_selection()<cr>", "Debug Selection" },
   },
 
+  D = {
+    name = "DoGe",
+    n = { "<cmd>DogeGenerate numpy<cr>", "Numpy docstring"},
+    g = { "<cmd>DogeGenerate google<cr>", "Google docstring"},
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
