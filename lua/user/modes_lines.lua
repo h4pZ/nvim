@@ -7,12 +7,12 @@ require('modes').setup({
   },
 
   -- Cursorline highlight opacity
-  line_opacity = 0.1,
+  line_opacity = 0.2,
 
   -- Highlight cursor
   set_cursor = true,
 
   -- Highlight in active window only
-  focus_only = false
+  focus_only = true
 })
 

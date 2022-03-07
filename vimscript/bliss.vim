@@ -450,6 +450,9 @@ hi DapUIBreakpointsInfo guifg=#a8f9c4
 hi DapUIBreakpointsCurrentLine guifg=#a8f9c4
 hi DapUIBreakpointsLine guifg=#8cd7ff
 
+" For symbols outline
+hi FocusedSymbol guibg=#f70067
+
 
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F

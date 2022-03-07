@@ -13,8 +13,22 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 --		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.black,
+--		formatting.black,
 		formatting.stylua,
+    formatting.isort,
+--     null_ls.builtins.diagnostics.pylint,
     diagnostics.flake8
 	},
 })
+
+-- null_ls.setup({
+-- 	debug = false,
+-- 	sources = {
+-- 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+-- --		formatting.black.with({ extra_args = { "--fast" } }),
+-- 		formatting.black,
+-- 		formatting.stylua,
+--     diagnostics.flake8
+-- 	},
+-- })
+
