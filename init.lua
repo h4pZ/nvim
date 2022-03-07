@@ -2,7 +2,8 @@ require "user.options"
 require "user.keymaps"
 require "user.plugins"
 -- require "user.colorscheme"
-vim.cmd('source ~/.config/nvim/vimscript/bliss.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/bliss.vim')
+require "user.catppuccin"
 require "user.cmp"
 require "user.lsp"
 require "user.telescope"
