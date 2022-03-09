@@ -16,6 +16,7 @@ null_ls.setup({
 --		formatting.black,
 		formatting.stylua,
     formatting.isort,
+    formatting.eslint_d,
 --     null_ls.builtins.diagnostics.pylint,
     diagnostics.flake8
 	},
