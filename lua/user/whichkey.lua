@@ -85,7 +85,6 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["m"] = { "<cmd>Glow<cr>", "Markdown Preview" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -122,6 +121,14 @@ local mappings = {
     name = "DoGe",
     n = { "<cmd>DogeGenerate numpy<cr>", "Numpy docstring"},
     g = { "<cmd>DogeGenerate google<cr>", "Google docstring"},
+  },
+
+  m = {
+    name = "Markdown",
+    g = { "<cmd>Glow<cr>", "Glow"},
+    p = { "<cmd>MarkdownPreview<cr>", "Markdown Preview"},
+    s = { "<cmd>MarkdownPreviewStop<cr>", "Markdown Preview Stop"},
+    t = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview Toggle"},
   },
 
   p = {

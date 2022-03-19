@@ -121,6 +121,8 @@ return packer.startup(function(use)
 
   -- Markdown preview.
   use "ellisonleao/glow.nvim"
+  use "iamcco/markdown-preview.nvim"
+
 
   -- Lines for colored lines modes.
   use({
