@@ -5,62 +5,62 @@ catppuccin.setup{
     transparent_background = true,
 term_colors = false,
 styles = {
-	comments = "NONE",
-	functions = "NONE",
-	keywords = "NONE",
-	strings = "NONE",
-	variables = "NONE",
+    comments = "NONE",
+    functions = "NONE",
+    keywords = "NONE",
+    strings = "NONE",
+    variables = "NONE",
 },
 integrations = {
-	treesitter = true,
-	native_lsp = {
-		enabled = true,
-		virtual_text = {
-			errors = "NONE",
-			hints = "NONE",
-			warnings = "NONE",
-			information = "NONE",
-		},
-		underlines = {
-			errors = "underline",
-			hints = "underline",
-			warnings = "underline",
-			information = "underline",
-		},
-	},
-	lsp_trouble = false,
-	cmp = true,
-	lsp_saga = false,
-	gitgutter = false,
-	gitsigns = true,
-	telescope = true,
-	nvimtree = {
-		enabled = true,
-		show_root = false,
-		transparent_panel = true,
-	},
-	neotree = {
-		enabled = false,
-		show_root = false,
-		transparent_panel = false,
-	},
-	which_key = false,
-	indent_blankline = {
-		enabled = true,
-		colored_indent_levels = true,
-	},
-	dashboard = true,
-	neogit = false,
-	vim_sneak = false,
-	fern = false,
-	barbar = false,
-	bufferline = true,
-	markdown = true,
-	lightspeed = false,
-	ts_rainbow = false,
-	hop = false,
-	notify = true,
-	telekasten = true,
+    treesitter = true,
+    native_lsp = {
+    enabled = true,
+    virtual_text = {
+      errors = "NONE",
+      hints = "NONE",
+      warnings = "NONE",
+      information = "NONE",
+    },
+    underlines = {
+      errors = "underline",
+      hints = "underline",
+      warnings = "underline",
+      information = "underline",
+    },
+    },
+    lsp_trouble = false,
+    cmp = true,
+    lsp_saga = false,
+    gitgutter = false,
+    gitsigns = true,
+    telescope = true,
+    nvimtree = {
+    enabled = true,
+    show_root = false,
+    transparent_panel = true,
+    },
+    neotree = {
+    enabled = false,
+    show_root = false,
+    transparent_panel = false,
+    },
+    which_key = false,
+    indent_blankline = {
+    enabled = true,
+    colored_indent_levels = true,
+    },
+    dashboard = true,
+    neogit = false,
+    vim_sneak = false,
+    fern = false,
+    barbar = false,
+    bufferline = true,
+    markdown = true,
+    lightspeed = false,
+    ts_rainbow = false,
+    hop = false,
+    notify = true,
+    telekasten = true,
 }
 }
 vim.cmd[[colorscheme catppuccin]]
@@ -69,9 +69,9 @@ vim.cmd[[colorscheme catppuccin]]
 vim.cmd('hi Normal guibg=#111217')
 
 -- Gitsigns colors
-vim.cmd('hi GitSignsAdd guifg=#a8f9c4 guibg=#1c1c26')
-vim.cmd('hi GitSignsChange guifg=#aeb1ff guibg=#1c1c26')
-vim.cmd('hi GitSignsDelete guifg=#feb8bf guibg=#1c1c26')
+vim.cmd('hi GitSignsAdd guifg=#a8f9c4')
+vim.cmd('hi GitSignsChange guifg=#aeb1ff')
+vim.cmd('hi GitSignsDelete guifg=#feb8bf')
 
 -- Signs handlers.lua file
 vim.cmd('hi DiagnosticSignError guifg=#feb8bf')
@@ -108,6 +108,6 @@ vim.cmd('hi DapUIBreakpointsLine guifg=#8cd7ff')
 vim.cmd('hi FocusedSymbol guibg=#f70067')
 
 -- For the number color.
-vim.cmd('hi CursorLineNr guifg=#a8f9c4 guibg=#1c1c26')
-vim.cmd('hi LineNr guibg=#1c1c26')
-vim.cmd('hi SignColumn guibg=#1c1c26')
+vim.cmd('hi CursorLineNr guifg=#a8f9c4')
+-- vim.cmd('hi LineNr guibg=#1c1c26')
+-- vim.cmd('hi SignColumn guibg=#1c1c26')
