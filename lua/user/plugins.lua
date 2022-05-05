@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use 'rktjmp/lush.nvim'
   use 'catppuccin/nvim'
+  use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

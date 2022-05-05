@@ -9,27 +9,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
-	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
---		formatting.black.with({ extra_args = { "--fast" } }),
---		formatting.black,
-		formatting.stylua,
     formatting.isort,
-    formatting.eslint_d,
---     null_ls.builtins.diagnostics.pylint,
-    diagnostics.flake8
-	},
+    diagnostics.flake8,
+    diagnostics.mypy
 })
-
--- null_ls.setup({
--- 	debug = false,
--- 	sources = {
--- 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
--- --		formatting.black.with({ extra_args = { "--fast" } }),
--- 		formatting.black,
--- 		formatting.stylua,
---     diagnostics.flake8
--- 	},
--- })
-

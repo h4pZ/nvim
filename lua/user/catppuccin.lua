@@ -3,7 +3,7 @@ local catppuccin = require("catppuccin")
 -- configure it
 catppuccin.setup{
     transparent_background = true,
-term_colors = true,
+term_colors = false,
 styles = {
 	comments = "NONE",
 	functions = "NONE",
@@ -12,7 +12,7 @@ styles = {
 	variables = "NONE",
 },
 integrations = {
-	treesitter = false,
+	treesitter = true,
 	native_lsp = {
 		enabled = true,
 		virtual_text = {
