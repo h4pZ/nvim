@@ -69,9 +69,9 @@ vim.cmd[[colorscheme catppuccin]]
 vim.cmd('hi Normal guibg=#111217')
 
 -- Gitsigns colors
-vim.cmd('hi GitSignsAdd guifg=#a8f9c4')
-vim.cmd('hi GitSignsChange guifg=#aeb1ff')
-vim.cmd('hi GitSignsDelete guifg=#feb8bf')
+vim.cmd('hi GitSignsAdd guifg=#a8f9c4 guibg=#1c1c26')
+vim.cmd('hi GitSignsChange guifg=#aeb1ff guibg=#1c1c26')
+vim.cmd('hi GitSignsDelete guifg=#feb8bf guibg=#1c1c26')
 
 -- Signs handlers.lua file
 vim.cmd('hi DiagnosticSignError guifg=#feb8bf')
@@ -108,4 +108,6 @@ vim.cmd('hi DapUIBreakpointsLine guifg=#8cd7ff')
 vim.cmd('hi FocusedSymbol guibg=#f70067')
 
 -- For the number color.
--- vim.cmd('hi LineNr guibg=#1c1c26')
+vim.cmd('hi CursorLineNr guifg=#a8f9c4 guibg=#1c1c26')
+vim.cmd('hi LineNr guibg=#1c1c26')
+vim.cmd('hi SignColumn guibg=#1c1c26')
