@@ -9,7 +9,8 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-    formatting.isort,
-    diagnostics.flake8,
-    diagnostics.mypy
+    sources = {
+        null_ls.builtins.formatting.isort,
+        null_ls.builtins.diagnostics.flake8,
+    },
 })
