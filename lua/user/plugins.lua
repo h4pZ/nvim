@@ -129,8 +129,12 @@ return packer.startup(function(use)
   use({
     'mvllow/modes.nvim',
     config = function()
-      vim.opt.cursorline = true
-      require('modes').setup()
+        require('modes').setup({
+                colors = {
+                    delete = "#f70067",
+                    insert = "#d89aff",
+                }
+        })
     end
   })
   -- Automatically set up your configuration after cloning packer.nvim
