@@ -3,7 +3,7 @@ local catppuccin = require("catppuccin")
 -- configure it
 catppuccin.setup{
     transparent_background = true,
-term_colors = false,
+term_colors = true,
 styles = {
     comments = "NONE",
     functions = "NONE",
@@ -105,7 +105,7 @@ vim.cmd('hi DapUIBreakpointsCurrentLine guifg=#a8f9c4')
 vim.cmd('hi DapUIBreakpointsLine guifg=#8cd7ff')
 
 -- For symbols outline
-vim.cmd('hi FocusedSymbol guibg=#f70067')
+vim.cmd('hi FocusedSymbol guibg=#1a1c24')
 
 -- For the number color.
 vim.cmd('hi CursorLineNr guifg=#a8f9c4')
