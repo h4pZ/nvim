@@ -66,7 +66,7 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use 'rktjmp/lush.nvim'
-  use 'catppuccin/nvim'
+  use {'catppuccin/nvim', as = "catppuccin"}
   use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
