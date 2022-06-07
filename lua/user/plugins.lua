@@ -133,6 +133,7 @@ return packer.startup(function(use)
                 colors = {
                     delete = "#f70067",
                     insert = "#d89aff",
+                    visual = "#ae72f7"
                 }
         })
     end
