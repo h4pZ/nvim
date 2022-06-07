@@ -113,3 +113,7 @@ vim.cmd('hi FocusedSymbol guibg=#1a1c24')
 vim.cmd('hi CursorLineNr guifg=#a8f9c4')
 -- vim.cmd('hi LineNr guibg=#1c1c26')
 -- vim.cmd('hi SignColumn guibg=#1c1c26')
+
+-- For bufferline.
+vim.cmd('hi BufferLineTabSelected guifg=#CDD6F4 guibg=#1E1E2E')
+vim.cmd('hi BufferLineTab guifg=#45475a guibg=#181825')
