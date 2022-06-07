@@ -97,9 +97,10 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
-  d = {
+  D = {
     name = "DAP",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    y = {"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Conditional Breakpoint"},
     c = { "<cmd>lua require'dap'.continue()<cr>", "Continue"},
     e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval"},
     o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over"},
@@ -117,7 +118,7 @@ local mappings = {
     s = { "<cmd>lua require'dap-python'.debug_selection()<cr>", "Debug Selection" },
   },
 
-  D = {
+  G = {
     name = "DoGe",
     n = { "<cmd>DogeGenerate numpy<cr>", "Numpy docstring"},
     g = { "<cmd>DogeGenerate google<cr>", "Google docstring"},
@@ -212,9 +213,10 @@ local mappings = {
   },
 
   T = {
-    name = "Hop",
+    name = "Telescope",
     t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" },
     h = { "<cmd>TodoTelescope<cr>", "TodoTelescope" },
+    f = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Current Buffer Fuzzy" },
   },
 
   t = {
