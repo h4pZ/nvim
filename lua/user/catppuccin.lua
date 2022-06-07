@@ -86,6 +86,7 @@ vim.cmd('hi NormalFloat guibg=#111217')
 
 -- For dap
 vim.cmd('hi DapBreakpoint guifg=#f70067')
+vim.cmd('hi DapBreakpointCondition guifg=#f70067')
 
 -- For dap-ui bars / colors.
 vim.cmd('hi lualine_a_inactive guifg=#8cd7ff')
