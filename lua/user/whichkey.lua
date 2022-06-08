@@ -90,12 +90,17 @@ local mappings = {
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["C"] = { "<cmd>close<CR>", "Close Split" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
-  ["F"] = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+
+  f = {
+    name = "Telescope find",
+    f = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
+    F = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
+    t = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Text Current Buffer"},
+    T = { "<cmd>TodoTrouble<cr>", "Todo Trouble" },
+    h = { "<cmd>TodoTelescope<cr>", "Todo Telescope" },
+
+  },
 
   D = {
     name = "DAP",
@@ -210,13 +215,6 @@ local mappings = {
     name = "Hop",
     h = { "<cmd>HopChar2<cr>", "Hop 2 characters" },
     H = { "<cmd>HopWord<cr>", "Hop to word" },
-  },
-
-  T = {
-    name = "Telescope",
-    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" },
-    h = { "<cmd>TodoTelescope<cr>", "TodoTelescope" },
-    f = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Current Buffer Fuzzy" },
   },
 
   t = {
