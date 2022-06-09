@@ -118,3 +118,6 @@ vim.cmd('hi CursorLineNr guifg=#a8f9c4')
 -- For bufferline.
 vim.cmd('hi BufferLineTabSelected guifg=#CDD6F4 guibg=#1E1E2E')
 vim.cmd('hi BufferLineTab guifg=#45475a guibg=#181825')
+
+-- For the things that divide splits.
+vim.cmd('hi WinSeparator guibg=None guifg=#1c1c26')
