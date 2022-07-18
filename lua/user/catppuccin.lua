@@ -2,30 +2,28 @@ local catppuccin = require("catppuccin")
 
 -- configure it
 catppuccin.setup{
+    compile = {
+      enabled = true,
+      path = vim.fn.stdpath "cache" .. "/catppuccin",
+      suffix = "_compiled"
+    },
     transparent_background = true,
     term_colors = true,
-    styles = {
-        comments = "NONE",
-        functions = "NONE",
-        keywords = "NONE",
-        strings = "NONE",
-        variables = "NONE",
-    },
     integrations = {
         treesitter = true,
         native_lsp = {
             enabled = true,
             virtual_text = {
-              errors = "NONE",
-              hints = "NONE",
-              warnings = "NONE",
-              information = "NONE",
+              errors = {},
+              hints = {},
+              warnings = {},
+              information = {},
             },
             underlines = {
-              errors = "underline",
-              hints = "underline",
-              warnings = "underline",
-              information = "underline",
+              errors = {"underline"},
+              hints = {"underline"},
+              warnings = {"underline"},
+              information = {"underline"},
             },
         },
         lsp_trouble = false,
@@ -61,7 +59,7 @@ catppuccin.setup{
         hop = false,
         notify = true,
         telekasten = true,
-    }
+    },
 }
 
 vim.g.catppuccin_flavour = "mocha"
