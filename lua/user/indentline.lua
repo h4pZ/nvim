@@ -17,7 +17,6 @@ vim.g.indent_blankline_filetype_exclude = {
 vim.g.indent_blankline_bufname_exclude = {
     'README.md',
     '.*.py',
-    '.*.html',
 }
 
 vim.g.indentLine_enabled = 1
