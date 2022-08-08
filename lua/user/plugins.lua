@@ -126,6 +126,12 @@ return packer.startup(function(use)
     -- tag = "*"
   }
 
+  -- nnn
+  use {
+      "luukvbaal/nnn.nvim",
+      config = function() require("nnn").setup() end
+  }
+
   -- Colors :)
   use 'norcalli/nvim-colorizer.lua'
 
