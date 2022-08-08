@@ -116,7 +116,15 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Documentation
-  use {'kkoomen/vim-doge', run = ":call doge#install()"}
+  use {
+    "danymat/neogen",
+    config = function()
+        require('neogen').setup({})
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  }
 
   -- Colors :)
   use 'norcalli/nvim-colorizer.lua'

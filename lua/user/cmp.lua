@@ -8,6 +8,12 @@ if not snip_status_ok then
   return
 end
 
+local neogen_status_ok, neogen = pcall(require, "neogen")
+if not neogen_status_ok then
+  return
+end
+
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -72,6 +78,8 @@ cmp.setup {
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
+      elseif neogen.jumpable() then
+        neogen.jump_next()
       elseif check_backspace() then
         fallback()
       else
@@ -86,6 +94,8 @@ cmp.setup {
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
         luasnip.jump(-1)
+      elseif neogen.jumpable(true) then
+        neogen.jump_prev()
       else
         fallback()
       end
