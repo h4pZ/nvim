@@ -128,8 +128,6 @@ local mappings = {
     n = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'numpydoc' }})<cr>", "Numpy docstring"},
     g = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'google_docstrings' }})<cr>", "Google docstring"},
     r = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>", "Google docstring"},
-    f = { "<cmd>lua require'neogen'.jump_next<cr>", "Jump next"},
-    b = { "<cmd>lua require'neogen'.jump_prev<cr>", "Jump prev"},
   },
 
   m = {
