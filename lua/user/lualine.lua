@@ -4,6 +4,11 @@ custom_ayu_mirage.normal.a.bg = "#ABE9B3"
 custom_ayu_mirage.insert.a.bg = "#aeb1ff"
 custom_ayu_mirage.visual.a.bg = "#96cdfb"
 custom_ayu_mirage.replace.a.bg = "#f70067"
+custom_ayu_mirage.normal.c.bg = "#181926"
+custom_ayu_mirage.normal.b.bg = "#181926"
+custom_ayu_mirage.insert.b.bg = "#181926"
+custom_ayu_mirage.visual.b.bg = "#181926"
+custom_ayu_mirage.replace.b.bg = "#181926"
 
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
@@ -70,14 +75,14 @@ local spaces = function()
 end
 
 lualine.setup({
-	options = {
-		icons_enabled = true,
-		theme = custom_ayu_mirage,
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
-		always_divide_middle = true,
-	},
+  options = {
+    icons_enabled = true,
+    theme = custom_ayu_mirage,
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+    always_divide_middle = true,
+  },
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
