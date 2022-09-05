@@ -4,11 +4,11 @@ custom_ayu_mirage.normal.a.bg = "#ABE9B3"
 custom_ayu_mirage.insert.a.bg = "#aeb1ff"
 custom_ayu_mirage.visual.a.bg = "#96cdfb"
 custom_ayu_mirage.replace.a.bg = "#f70067"
-custom_ayu_mirage.normal.c.bg = "#181926"
-custom_ayu_mirage.normal.b.bg = "#181926"
-custom_ayu_mirage.insert.b.bg = "#181926"
-custom_ayu_mirage.visual.b.bg = "#181926"
-custom_ayu_mirage.replace.b.bg = "#181926"
+custom_ayu_mirage.normal.c.bg = "#1e1e28"
+custom_ayu_mirage.normal.b.bg = "#1e1e28"
+custom_ayu_mirage.insert.b.bg = "#1e1e28"
+custom_ayu_mirage.visual.b.bg = "#1e1e28"
+custom_ayu_mirage.replace.b.bg = "#1e1e28"
 
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
