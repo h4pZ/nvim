@@ -122,4 +122,6 @@ vim.cmd('hi WinSeparator guibg=None guifg=#434369')
 
 -- For which key background.
 vim.cmd('hi WhichKeyFloat guibg=#111217')
-vim.cmd('hi WhichKeyBorder guifg=#111217')
+vim.cmd('hi FloatBorder guifg=#3d4154')
+vim.cmd('hi WhichKeyBorder guifg=#3d4154')
+vim.cmd('hi TelescopeBorder guifg=#3d4154')
