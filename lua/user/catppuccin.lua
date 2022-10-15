@@ -119,3 +119,7 @@ vim.cmd('hi BufferLineTab guifg=#45475a guibg=#181825')
 
 -- For the things that divide splits.
 vim.cmd('hi WinSeparator guibg=None guifg=#434369')
+
+-- For which key background.
+vim.cmd('hi WhichKeyFloat guibg=#111217')
+vim.cmd('hi WhichKeyBorder guibg=#111217')
