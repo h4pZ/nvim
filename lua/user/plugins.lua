@@ -59,7 +59,6 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use "unblevable/quick-scope"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
 
@@ -102,8 +101,18 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
-  -- Hoper
+  -- Movement
   use 'phaazon/hop.nvim'
+  use {
+          'jinh0/eyeliner.nvim',
+          keys = { "t", "T", "f", "F" },
+           config = function()
+         require'eyeliner'.setup {
+           highlight_on_key = true
+         }
+      end
+    }
+
 
   -- Treesitter
   use {
