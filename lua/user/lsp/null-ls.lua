@@ -12,6 +12,9 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.xmllint,
+        null_ls.builtins.formatting.fixjson.with({ extra_args = {"--indent", "4"}}),
+        null_ls.builtins.formatting.eslint_d,
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.eslint_d,
