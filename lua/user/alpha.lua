@@ -67,6 +67,7 @@ dashboard.config.layout = {
 }
 
 
+-- Highlight groups for alpha dashboard.
 vim.cmd('hi AlphaButtonText guifg=#575268')
 vim.cmd('hi AlphaFooter guifg=#434369')
 vim.cmd('hi AlphaButtonShortcut guibg=None guifg=#8E87ED')
