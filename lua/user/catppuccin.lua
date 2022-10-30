@@ -125,3 +125,6 @@ vim.cmd('hi WhichKeyFloat guibg=#111217')
 vim.cmd('hi FloatBorder guifg=#3d4154')
 vim.cmd('hi WhichKeyBorder guifg=#3d4154')
 vim.cmd('hi TelescopeBorder guifg=#3d4154')
+
+-- NvimTree
+vim.cmd('hi NvimTreeFolderIcon guifg=#FAE3B0')
