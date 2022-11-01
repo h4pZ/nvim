@@ -103,16 +103,6 @@ return packer.startup(function(use)
 
   -- Movement
   use 'phaazon/hop.nvim'
-  use {
-          'jinh0/eyeliner.nvim',
-          keys = { "t", "T", "f", "F" },
-           config = function()
-         require'eyeliner'.setup {
-           highlight_on_key = true
-         }
-      end
-    }
-
 
   -- Treesitter
   use {

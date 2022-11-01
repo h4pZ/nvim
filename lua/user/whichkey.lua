@@ -216,6 +216,7 @@ local mappings = {
   H = {
     name = "Hop",
     h = { "<cmd>HopChar2<cr>", "Hop 2 characters" },
+    p = { "<cmd>HopPattern<cr>", "Hop to pattern" },
     H = { "<cmd>HopWord<cr>", "Hop to word" },
   },
 
