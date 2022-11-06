@@ -66,7 +66,7 @@ vim.g.catppuccin_flavour = "mocha"
 vim.cmd[[colorscheme catppuccin]]
 
 -- extra stuff
-vim.cmd('hi Normal guibg=#111217')
+vim.cmd('hi Normal guibg=#0a0b10')
 
 -- Gitsigns colors
 vim.cmd('hi GitSignsAdd guifg=#a8f9c4')
