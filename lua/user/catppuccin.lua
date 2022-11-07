@@ -128,3 +128,7 @@ vim.cmd('hi TelescopeBorder guifg=#3d4154')
 
 -- NvimTree
 vim.cmd('hi NvimTreeFolderIcon guifg=#FAE3B0')
+
+-- fidget
+vim.cmd('hi FidgetTitle guifg=#c9cbff')
+vim.cmd('hi FidgetTask guifg=#3d4154')

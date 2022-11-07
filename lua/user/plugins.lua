@@ -86,6 +86,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim" } -- Package Manager.
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "j-hui/fidget.nvim"
   use "simrat39/symbols-outline.nvim"
   use 'ray-x/lsp_signature.nvim'
   use {
