@@ -9,6 +9,7 @@ function os.capture(cmd, raw)
   return s
 end
 
-local python_path = os.capture("which python", false)
+--[[ local python_path = os.capture("which python", false) ]]
+local python_path = vim.fn.stdpath("data")..'/mason/packages/debugpy/venv/bin/python3'
 require('dap-python').setup(python_path)
 require('dap-python').test_runner = 'pytest'

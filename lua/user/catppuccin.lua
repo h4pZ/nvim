@@ -80,7 +80,7 @@ vim.cmd('hi DiagnosticSignHint  guifg=#8cd7ff')
 vim.cmd('hi DiagnosticSignInfo  guifg=#ffffff')
 
 -- For the floating window background
-vim.cmd('hi NormalFloat guibg=#111217')
+vim.cmd('hi NormalFloat guibg=#0a0b10')
 
 -- For dap
 vim.cmd('hi DapBreakpoint guifg=#f70067')
@@ -121,7 +121,7 @@ vim.cmd('hi BufferLineTab guifg=#45475a guibg=#181825')
 vim.cmd('hi WinSeparator guibg=None guifg=#434369')
 
 -- For which key background.
-vim.cmd('hi WhichKeyFloat guibg=#111217')
+vim.cmd('hi WhichKeyFloat guibg=#0a0b10')
 vim.cmd('hi FloatBorder guifg=#3d4154')
 vim.cmd('hi WhichKeyBorder guifg=#3d4154')
 vim.cmd('hi TelescopeBorder guifg=#3d4154')

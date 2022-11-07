@@ -17,7 +17,7 @@ require("dapui").setup({
         'watches',                                                                                                                 
       },                                                                                                                           
       size = 40,                                                                                                                   
-      position = 'left',                                                                                                           
+      position = 'right',                                                                                                           
     },                                                                                                                             
     {                                                                                                                              
       elements = {                                                                                                                 

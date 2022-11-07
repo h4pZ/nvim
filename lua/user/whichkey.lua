@@ -102,7 +102,7 @@ local mappings = {
 
   },
 
-  D = {
+  d = {
     name = "DAP",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
     y = {"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Conditional Breakpoint"},
@@ -117,7 +117,8 @@ local mappings = {
     g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
     u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
     p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
-    q = { "<cmd>lua require'dapui'.close()<cr>", "Quit (dapui)" },
+    q = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle dap-ui" },
+    T = { "<cmd>lua require'dap'.terminate()<cr>", "Terminates Session" },
     m = { "<cmd>lua require'dap-python'.test_method()<cr>", "Test Method" },
     a = { "<cmd>lua require'dap-python'.test_class()<cr>", "Test Class" },
     s = { "<cmd>lua require'dap-python'.debug_selection()<cr>", "Debug Selection" },
