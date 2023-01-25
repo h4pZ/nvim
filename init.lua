@@ -32,4 +32,5 @@ require "user.dap-python"
 require "user.dap-ui"
 require "user.glow"
 require "user.modes_lines"
+require "user.tabnine"
 vim.cmd('source ~/.config/nvim/vimscript/markdown-prev.vim')

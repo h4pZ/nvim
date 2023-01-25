@@ -112,7 +112,7 @@ lualine.setup({
     },
     sections = {
         lualine_a = { branch, diagnostics },
-        lualine_b = { python_env },
+        lualine_b = { python_env , "tabnine"},
         lualine_c = { },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype },
