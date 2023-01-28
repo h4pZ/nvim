@@ -132,3 +132,9 @@ vim.cmd('hi NvimTreeFolderIcon guifg=#FAE3B0')
 -- fidget
 vim.cmd('hi FidgetTitle guifg=#c9cbff')
 vim.cmd('hi FidgetTask guifg=#3d4154')
+
+-- remove underline for diagnostics.
+vim.cmd('hi DiagnosticUnderlineError gui=none')
+vim.cmd('hi DiagnosticUnderlineWarn gui=none')
+vim.cmd('hi DiagnosticUnderlineInfo gui=none')
+vim.cmd('hi DiagnosticUnderlineHint gui=none')
