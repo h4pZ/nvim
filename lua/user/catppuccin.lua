@@ -74,10 +74,15 @@ vim.cmd('hi GitSignsChange guifg=#aeb1ff')
 vim.cmd('hi GitSignsDelete guifg=#feb8bf')
 
 -- Signs handlers.lua file
-vim.cmd('hi DiagnosticSignError guifg=#feb8bf')
-vim.cmd('hi DiagnosticSignWarn  guifg=#ffbdf1')
-vim.cmd('hi DiagnosticSignHint  guifg=#8cd7ff')
-vim.cmd('hi DiagnosticSignInfo  guifg=#ffffff')
+vim.cmd('hi DiagnosticSignError guifg=#F28FAD')
+vim.cmd('hi DiagnosticVirtualTextError guifg=#F28FAD')
+vim.cmd('hi DiagnosticFloatingError guifg=#F28FAD')
+vim.cmd('hi DiagnosticSignWarn  guifg=#FAE3B0')
+vim.cmd('hi DiagnosticFloatingWarn  guifg=#FAE3B0')
+vim.cmd('hi DiagnosticSignHint  guifg=#a8f9c4')
+vim.cmd('hi DiagnosticFloatingHint  guifg=#a8f9c4')
+vim.cmd('hi DiagnosticSignInfo  guifg=#8cd7ff')
+vim.cmd('hi DiagnosticFloatingInfo  guifg=#8cd7ff')
 
 -- For the floating window background
 vim.cmd('hi NormalFloat guibg=#0a0b10')
@@ -132,9 +137,3 @@ vim.cmd('hi NvimTreeFolderIcon guifg=#FAE3B0')
 -- fidget
 vim.cmd('hi FidgetTitle guifg=#c9cbff')
 vim.cmd('hi FidgetTask guifg=#3d4154')
-
--- remove underline for diagnostics.
-vim.cmd('hi DiagnosticUnderlineError gui=none')
-vim.cmd('hi DiagnosticUnderlineWarn gui=none')
-vim.cmd('hi DiagnosticUnderlineInfo gui=none')
-vim.cmd('hi DiagnosticUnderlineHint gui=none')

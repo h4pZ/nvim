@@ -15,13 +15,17 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    virtual_text = {
+            severity = { min = "WARN" ,},
+    },
     -- show signs
     signs = {
       active = signs,
     },
     update_in_insert = true,
-    underline = true,
+    underline = {
+            severity = "ERROR",
+    },
     severity_sort = true,
     float = {
       focusable = false,
