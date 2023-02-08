@@ -111,7 +111,7 @@ vim.cmd('hi DapUIBreakpointsCurrentLine guifg=#a8f9c4')
 vim.cmd('hi DapUIBreakpointsLine guifg=#8cd7ff')
 
 -- For symbols outline
-vim.cmd('hi FocusedSymbol guibg=#1a1c24')
+vim.cmd('hi FocusedSymbol guibg=#1a1c24 guifg=#f70067')
 
 -- For the number color.
 vim.cmd('hi CursorLineNr guifg=#a8f9c4')
