@@ -137,7 +137,7 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
 
   -- Markdown preview.
-  use "ellisonleao/glow.nvim"
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 
