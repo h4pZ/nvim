@@ -82,6 +82,7 @@ vim.cmd('hi DiagnosticSignHint  guifg=#a8f9c4')
 vim.cmd('hi DiagnosticFloatingHint  guifg=#a8f9c4')
 vim.cmd('hi DiagnosticSignInfo  guifg=#8cd7ff')
 vim.cmd('hi DiagnosticFloatingInfo  guifg=#8cd7ff')
+vim.cmd('hi DiagnosticUnderlineError guisp=#F28FAD')
 
 -- For the floating window background
 vim.cmd('hi NormalFloat guibg=#0a0b10')

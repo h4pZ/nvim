@@ -127,12 +127,6 @@ return packer.startup(function(use)
     -- tag = "*"
   }
 
-  -- nnn
-  use {
-      "luukvbaal/nnn.nvim",
-      config = function() require("nnn").setup() end
-  }
-
   -- Colors :)
   use 'norcalli/nvim-colorizer.lua'
 
@@ -157,6 +151,9 @@ return packer.startup(function(use)
 
   -- Autocomplete - tabnine
   use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
+  -- nvim repl
+  use {'hkupty/iron.nvim'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

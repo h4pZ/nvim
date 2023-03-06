@@ -103,6 +103,15 @@ local mappings = {
 
   },
 
+  i = {
+    name = "Iron",
+    f = {" <cmd>IronFocus<cr>", "Focus REPL"},
+    h = {" <cmd>IronHide<cr>", "Hide REPL"},
+    s = {" <cmd>lua require('iron.core').close_repl()<cr>", "Stop REPL"},
+    F = {" <cmd>lua require('iron.core').send_file()<cr>", "Send File"},
+    F = {" <cmd>lua require('iron.core').send_line()<cr>", "Send Line"},
+  },
+
   d = {
     name = "DAP",
     t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },

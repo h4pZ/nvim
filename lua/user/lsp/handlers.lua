@@ -15,9 +15,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = {
-            severity = { min = "ERROR" ,},
-    },
+    virtual_text = false,
     -- show signs
     signs = {
       active = signs,
