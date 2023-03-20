@@ -149,9 +149,6 @@ return packer.startup(function(use)
     end
   })
 
-  -- Autocomplete - tabnine
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
-
   -- nvim repl
   use {'hkupty/iron.nvim'}
 
