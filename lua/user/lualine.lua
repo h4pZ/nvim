@@ -112,6 +112,7 @@ lualine.setup({
     },
     sections = {
         lualine_a = { branch, diagnostics },
+        lualine_b = { },
         lualine_c = { },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype },
