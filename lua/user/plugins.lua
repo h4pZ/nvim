@@ -150,7 +150,23 @@ return packer.startup(function(use)
   })
 
   -- nvim repl
-  use {'hkupty/iron.nvim'}
+  use {'Vigemus/iron.nvim'}
+
+  -- nvim notify
+  use {"rcarriga/nvim-notify"}
+  use {"MunifTanjim/nui.nvim"}
+    -- Packer
+  use({
+    "folke/noice.nvim",
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

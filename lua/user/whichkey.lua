@@ -100,7 +100,7 @@ local mappings = {
     T = { "<cmd>TodoTrouble<cr>", "Todo Trouble" },
     h = { "<cmd>TodoTelescope<cr>", "Todo Telescope" },
     c = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands Telescope" },
-
+    n = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notifications Telescope" },
   },
 
   i = {
