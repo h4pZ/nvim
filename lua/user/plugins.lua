@@ -152,9 +152,6 @@ return packer.startup(function(use)
   -- nvim repl
   use {'hkupty/iron.nvim'}
 
-  -- tabnine
-  use { 'codota/tabnine-nvim', run = './dl_binaries.sh' }
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
