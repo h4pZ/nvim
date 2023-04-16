@@ -19,6 +19,8 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+copilot_status = require('user.copilot_status').get_status
+
 local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
@@ -112,7 +114,7 @@ lualine.setup({
     },
     sections = {
         lualine_a = { branch, diagnostics },
-        lualine_b = { python_env },
+        lualine_b = { python_env, copilot_status },
         lualine_c = { },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype },

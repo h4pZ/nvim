@@ -155,7 +155,6 @@ return packer.startup(function(use)
   -- nvim notify
   use {"rcarriga/nvim-notify"}
   use {"MunifTanjim/nui.nvim"}
-    -- Packer
   use({
     "folke/noice.nvim",
     requires = {
@@ -168,6 +167,52 @@ return packer.startup(function(use)
       }
   })
 
+  -- Copilot stuff.
+ use {
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "VimEnter",
+  config = function()
+    require('copilot').setup({
+        panel = {
+            auto_refresh = false,
+            keymap = {
+              accept = "<CR>",
+              jump_prev = "[[",
+              jump_next = "]]",
+              refresh = "gr",
+              open = "<M-CR>",
+            },
+        },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<M-l>",
+          prev = "<M-[>",
+          next = "<M-]>",
+          dismiss = "<C-]>",
+        },
+      },
+    })
+    end,
+  }
+
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup({
+  formatters = {
+    label = require("copilot_cmp.format").format_label_text,
+    insert_text = require("copilot_cmp.format").format_insert_text,
+    preview = require("copilot_cmp.format").deindent,
+  },
+})
+    end
+  }
+
+  -- Packer
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
