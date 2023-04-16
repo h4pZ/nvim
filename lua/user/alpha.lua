@@ -60,7 +60,7 @@ dashboard.opts.opts.noautocmd = true
 dashboard.config.layout = {
   { type = "padding", val = 1 },
   dashboard.section.terminal,
-  { type = "padding", val = 30 },
+  { type = "padding", val = 5 },
   dashboard.section.buttons,
   { type = "padding", val = 1 },
   dashboard.section.footer,
