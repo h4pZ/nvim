@@ -246,7 +246,21 @@ local mappings = {
     name = "Tabs",
     n = {"<cmd>tabnew<cr>", "New Tab"},
     c = {"<cmd>tabclose<cr>", "Close Current Tab"}
-    }
+    },
+
+  G = {
+    name = "Copilot",
+    t = { "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", "Toggle auto trigger"},
+    v = { "<cmd>lua require('copilot.suggestion').is_visible()<cr>", "Is visible?"},
+    a = { "<cmd>lua require('copilot.suggestion').accept()<cr>", "Accept"},
+    w = { "<cmd>lua require('copilot.suggestion').accept_word()<cr>", "Accept word"},
+    l = { "<cmd>lua require('copilot.suggestion').accept_line()<cr>", "Accept line"},
+    n = { "<cmd>lua require('copilot.suggestion').next()<cr>", "Next suggestion"},
+    p = { "<cmd>lua require('copilot.suggestion').prev()<cr>", "Previous suggestion"},
+    d = { "<cmd>lua require('copilot.suggestion').dismiss()<cr>", "Dismiss suggestion"},
+  },
+
+
 }
 
 which_key.setup(setup)

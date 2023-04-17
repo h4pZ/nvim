@@ -28,7 +28,7 @@ local has_words_before = function()
 end
 
 cmp.event:on("menu_opened", function()
-  vim.b.copilot_suggestion_hidden = true
+  vim.b.copilot_suggestion_hidden = false
 end)
 
 cmp.event:on("menu_closed", function()
@@ -147,7 +147,7 @@ cmp.setup {
     select = false,
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

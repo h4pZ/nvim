@@ -175,7 +175,8 @@ return packer.startup(function(use)
   config = function()
     require('copilot').setup({
         panel = {
-            auto_refresh = false,
+            enabled = false,
+            auto_refresh = true,
             keymap = {
               accept = "<CR>",
               jump_prev = "[[",
@@ -185,7 +186,7 @@ return packer.startup(function(use)
             },
         },
       suggestion = {
-        enabled = true,
+        enabled = false,
         auto_trigger = true,
         keymap = {
           accept = "<M-l>",
