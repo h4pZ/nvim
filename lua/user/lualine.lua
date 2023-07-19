@@ -103,6 +103,16 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+
+local function show_macro_recording()
+    local recording_register = vim.fn.reg_recording()
+    if recording_register == "" then
+        return ""
+    else
+        return "Recording @" .. recording_register
+    end
+end
+
 lualine.setup({
     options = {
         icons_enabled = true,
@@ -115,7 +125,7 @@ lualine.setup({
     sections = {
         lualine_a = { branch, diagnostics },
         lualine_b = { python_env, copilot_status },
-        lualine_c = { },
+        lualine_c = { {"macro-recording", fmt = show_macro_recording}, },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype },
         lualine_y = { location },
