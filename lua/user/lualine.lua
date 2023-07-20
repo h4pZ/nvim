@@ -124,7 +124,7 @@ lualine.setup({
     },
     sections = {
         lualine_a = { branch, diagnostics },
-        lualine_b = { python_env, copilot_status },
+        lualine_b = { python_env },
         lualine_c = { {"macro-recording", fmt = show_macro_recording}, },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding", filetype },
