@@ -1,3 +1,3 @@
 require("notify").setup {
-    fps = 240,
+    fps = 60,
 }
