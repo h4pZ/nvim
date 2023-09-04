@@ -68,4 +68,5 @@ require('lspconfig')['rust_analyzer'].setup{
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 }
