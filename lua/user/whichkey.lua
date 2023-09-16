@@ -126,6 +126,7 @@ local mappings = {
     d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
     g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
     u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    l = { "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear Breakpoinst"},
     p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
     q = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle dap-ui" },
     T = { "<cmd>lua require'dap'.terminate()<cr>", "Terminates Session" },
