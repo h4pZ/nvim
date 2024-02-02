@@ -12,7 +12,8 @@ iron.setup {
         command = {"zsh"}
       },
       python = {
-        command = {"ipython"}
+        command = {"ipython"},
+        format = require("iron.fts.common").bracketed_paste,
       }
     },
     -- How the repl window will be displayed
