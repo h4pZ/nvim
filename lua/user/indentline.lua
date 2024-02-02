@@ -62,4 +62,4 @@ vim.cmd [[highlight IndentBlanklineContextStart guisp=#abaec2 gui=underline]]
 -- vim.opt.listchars:append "space:"
 -- vim.opt.listchars:append "eol:↴"
 
-indent_blankline.setup({})
+indent_blankline.setup({scope = { enabled = false }})
