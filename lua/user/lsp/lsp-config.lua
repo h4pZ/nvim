@@ -70,3 +70,5 @@ require('lspconfig')['clangd'].setup{
     flags = lsp_flags,
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 }
+
+require'lspconfig'.svelte.setup{}
