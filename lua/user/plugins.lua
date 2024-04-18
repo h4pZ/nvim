@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use 'rktjmp/lush.nvim'
   use {'catppuccin/nvim', as = "catppuccin", run = "CatppuccinCompile"}
   use "projekt0n/github-nvim-theme"
+  use "rose-pine/neovim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -97,7 +98,7 @@ return packer.startup(function(use)
   -- Debugger.
   use "mfussenegger/nvim-dap"
   use "mfussenegger/nvim-dap-python"
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

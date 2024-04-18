@@ -1,8 +1,8 @@
 local custom_ayu_mirage = require("lualine.themes.ayu_mirage")
 
-custom_ayu_mirage.normal.a.bg = "#ABE9B3"
-custom_ayu_mirage.insert.a.bg = "#aeb1ff"
-custom_ayu_mirage.visual.a.bg = "#96cdfb"
+custom_ayu_mirage.normal.a.bg = "#aeb1ff"
+custom_ayu_mirage.insert.a.bg = "#96cdfb"
+custom_ayu_mirage.visual.a.bg = "#ABE9B3"
 custom_ayu_mirage.replace.a.bg = "#f70067"
 custom_ayu_mirage.normal.c.bg = "#1e1e28"
 custom_ayu_mirage.normal.b.bg = "#1e1e28"

@@ -180,6 +180,7 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
+    D = { "<cmd>wincmd p | q<cr>", "Close Diff" },
   },
 
   l = {
