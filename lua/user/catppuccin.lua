@@ -65,7 +65,7 @@ catppuccin.setup{
 vim.cmd.colorscheme "catppuccin-mocha"
 
 -- extra stuff
-vim.cmd('hi Normal guibg=#191724')
+vim.cmd('hi Normal guibg=#11111b')
 
 -- Gitsigns colors
 vim.cmd('hi GitSignsAdd guifg=#a8f9c4')
@@ -85,7 +85,7 @@ vim.cmd('hi DiagnosticFloatingInfo  guifg=#8cd7ff')
 vim.cmd('hi DiagnosticUnderlineError guisp=#F28FAD')
 
 -- For the floating window background
-vim.cmd('hi NormalFloat guibg=#191724')
+vim.cmd('hi NormalFloat guibg=#11111b')
 
 -- For dap
 vim.cmd('hi DapBreakpoint guifg=#f70067')
@@ -126,7 +126,7 @@ vim.cmd('hi BufferLineTab guifg=#45475a guibg=#181825')
 vim.cmd('hi WinSeparator guibg=None guifg=#434369')
 
 -- For which key background.
-vim.cmd('hi WhichKeyFloat guibg=#191724')
+vim.cmd('hi WhichKeyFloat guibg=#11111b')
 vim.cmd('hi FloatBorder guifg=#3d4154')
 vim.cmd('hi WhichKeyBorder guifg=#3d4154')
 vim.cmd('hi TelescopeBorder guifg=#3d4154')
