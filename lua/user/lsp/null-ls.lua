@@ -10,6 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
     sources = {
+        require("none-ls.diagnostics.ruff"),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.clang_format,
     },
