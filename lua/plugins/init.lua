@@ -28,6 +28,7 @@ return {
   --
   {
   	"nvim-treesitter/nvim-treesitter",
+    ensure_installed = { "all", },
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
@@ -35,4 +36,5 @@ return {
   		},
   	},
   },
+  { "folke/which-key.nvim",  lazy = false },
 }
