@@ -1,38 +1,39 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
--- require "user.colorscheme"
--- vim.cmd('source ~/.config/nvim/vimscript/bliss.vim')
-require "user.catppuccin"
-require "user.cmp"
-require "user.lsp"
-require "user.fidget"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree-config"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
-require "user.hop"
-require "user.colorizer"
-require "user.neoscroll"
-require "user.todo-comments"
-require "user.symbol-outline"
-require "user.dap"
-require "user.dap-python"
-require "user.dap-ui"
-require "user.glow"
-require "user.modes_lines"
-require "user.iron"
-require "user.notify"
-require "user.noice"
-vim.cmd('source ~/.config/nvim/vimscript/markdown-prev.vim')
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.mapleader = " "
+
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)
