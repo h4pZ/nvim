@@ -208,4 +208,19 @@ return {
     end,
   },
 
+  {
+    'mvllow/modes.nvim',
+    lazy = false,
+    tag = 'v0.2.0',
+    config = function()
+      require('modes').setup({
+        colors = {
+          delete = "#f70067",
+          insert = "#d89aff",
+          visual = "#ae72f7"
+        }
+      })
+    end
+  }
+
 }
