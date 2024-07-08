@@ -67,7 +67,7 @@ return {
 
   {
     "Vigemus/iron.nvim",
-    lazy = false,
+    lazy = true,
     config = function()
       require "configs.iron"
     end,
@@ -103,7 +103,8 @@ return {
     "danymat/neogen",
     config = true,
     -- Uncomment next line if you want to follow only stable versions
-    version = "*"
+    version = "*",
+    lazy = true,
   },
 
   {
@@ -114,5 +115,14 @@ return {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+    lazy =  true,
+  },
+
+  {
+    "phaazon/hop.nvim",
+    lazy = false,
+    config = function()
+      require "configs.hop"
+    end,
   },
 }
