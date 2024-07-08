@@ -5,6 +5,7 @@
 local M = {}
 
 M.ui = {
+  tabufline = { order = { "treeOffset", "buffers", "tabs" } },
   hl_override = {
     NvDashAscii = { fg = "#f70067", bg = "black" },
 
@@ -71,11 +72,11 @@ M.ui = {
     },
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
+      { "  Projects", "Spc P", "Telescope projects " },
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc m a", "Telescope marks" },
       { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc c h", "NvCheatsheet" },
     },
   },
   theme = "real-cat",
