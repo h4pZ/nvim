@@ -115,7 +115,7 @@ return {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
-    lazy =  true,
+    lazy = true,
   },
 
   {
@@ -125,4 +125,59 @@ return {
       require "configs.hop"
     end,
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "VimEnter",
+    lazy = false,
+    config = function()
+      require('copilot').setup({
+        panel = {
+          enabled = false,
+          auto_refresh = true,
+          keymap = {
+            accept = "<CR>",
+            jump_prev = "[[",
+            jump_next = "]]",
+            refresh = "gr",
+            open = "<M-CR>",
+          },
+        },
+        suggestion = {
+          enabled = false,
+          auto_trigger = true,
+          keymap = {
+            accept = "<M-l>",
+            prev = "<M-[>",
+            next = "<M-]>",
+            dismiss = "<C-]>",
+          },
+        },
+      })
+    end,
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    lazy = false,
+    config = function()
+      require("copilot_cmp").setup({
+        formatters = {
+          label = require("copilot_cmp.format").format_label_text,
+          insert_text = require("copilot_cmp.format").format_insert_text,
+          preview = require("copilot_cmp.format").deindent,
+        },
+      })
+    end
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require "configs.cmp"
+    end,
+  }
+
 }
