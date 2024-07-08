@@ -36,6 +36,7 @@ return {
 
   {
     "ahmedkhalf/project.nvim",
+    lazy = false,
     config = function()
       require "configs.project"
     end,
@@ -211,7 +212,7 @@ return {
 
   {
     'mvllow/modes.nvim',
-    lazy = false,
+    lazy = true,
     tag = 'v0.2.0',
     config = function()
       require('modes').setup({
