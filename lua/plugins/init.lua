@@ -37,4 +37,51 @@ return {
   	},
   },
   -- My plugins
+  {
+    "folke/which-key.nvim",
+    config = function()
+      require "configs.which-key"
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require "configs.telescope"
+    end,
+  },
+
+  {
+    "Vigemus/iron.nvim",
+    lazy = false,
+    config = function()
+      require "configs.iron"
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    lazy = false,
+    config = function()
+      require "configs.dap"
+    end,
+
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    lazy = false,
+    config = function()
+      require "configs.dap-python"
+    end,
+  },
+
+  { "nvim-neotest/nvim-nio" },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    lazy = false,
+    config = function()
+      require "configs.dap-ui"
+    end,
+  }
 }
