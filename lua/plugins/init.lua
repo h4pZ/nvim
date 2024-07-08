@@ -17,13 +17,13 @@ return {
   },
   --
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
-  		},
-  	},
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server", "stylua",
+        "html-lsp", "css-lsp", "prettier"
+      },
+    },
   },
 
   {
@@ -41,14 +41,14 @@ return {
   },
   --
   {
-  	"nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     ensure_installed = { "all", },
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "python"
-  		},
-  	},
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css", "python"
+      },
+    },
   },
   -- My plugins
   {
@@ -104,5 +104,15 @@ return {
     config = true,
     -- Uncomment next line if you want to follow only stable versions
     version = "*"
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 }
