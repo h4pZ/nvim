@@ -199,4 +199,13 @@ return {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+
+  {
+    "norcalli/nvim-colorizer.lua",
+    lazy = false,
+    config = function()
+      require "configs.nvim-colorizer"
+    end,
+  },
+
 }
