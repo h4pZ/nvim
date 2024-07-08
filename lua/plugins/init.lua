@@ -25,6 +25,20 @@ return {
   		},
   	},
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require "configs.nvim-tree"
+    end,
+  },
+
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require "configs.project"
+    end,
+  },
   --
   {
   	"nvim-treesitter/nvim-treesitter",
