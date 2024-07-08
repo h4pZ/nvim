@@ -178,6 +178,25 @@ return {
     config = function()
       require "configs.cmp"
     end,
-  }
+  },
+  {
+    "karb94/neoscroll.nvim",
+    lazy = false,
+    config = function()
+      require "configs.neoscroll"
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    lazy = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require "configs.todo-comments"
+    end,
 
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
 }
