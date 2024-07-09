@@ -91,6 +91,7 @@ local mappings = {
     f = {" <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
     F = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
     t = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Text Current Buffer"},
+    M = { "<cmd>Telescope marks sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Telescope Marks"},
     T = { "<cmd>TodoTrouble<cr>", "Todo Trouble" },
     h = { "<cmd>TodoTelescope<cr>", "Todo Telescope" },
     c = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands Telescope" },

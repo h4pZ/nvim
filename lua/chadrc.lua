@@ -10,9 +10,9 @@ M.ui = {
     NvDashAscii = { fg = "#f70067", bg = "black" },
 
     WhichKey = { fg = "orange" },
-    WhichKeyDesc = { fg = "white" },
-    WhichKeyGroup = { fg = "pink" },
-    WhichKeyValue = { fg = "pink" },
+    WhichKeyDesc = { fg = "teal" },
+    WhichKeyGroup = { fg = "lavender" },
+    WhichKeyValue = { fg = "lavender" },
 
     TelescopePromptPrefix = { fg = "purple" },
     TelescopePromptTitle = { bg = "purple" },

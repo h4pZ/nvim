@@ -43,6 +43,7 @@ end)
 
 -- Quick fix.
 vim.cmd('hi CursorLineNr guifg=#a8f9c4')
+vim.cmd('hi DapBreakpoint guifg=#f70067')
 vim.cmd('hi DapBreakpointCondition guifg=#f70067')
 vim.cmd('hi DapUIScope guifg=#8cd7ff')
 vim.cmd('hi DapUIType guifg=#aeb1ff')
@@ -59,3 +60,7 @@ vim.cmd('hi DapUIBreakpointsInfo guifg=#a8f9c4')
 vim.cmd('hi DapUIBreakpointsCurrentLine guifg=#a8f9c4')
 vim.cmd('hi DapUIBreakpointsLine guifg=#8cd7ff')
 
+vim.cmd('hi WhichKey guifg=#F8BD96')
+vim.cmd('hi WhichKeyDesc guifg=#B5E8E0')
+vim.cmd('hi WhichKeyGroup guifg=#c7d1ff')
+vim.cmd('hi WhichKeyValue guifg=#c7d1ff')

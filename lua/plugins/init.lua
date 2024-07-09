@@ -55,6 +55,7 @@ return {
   -- My plugins
   {
     "folke/which-key.nvim",
+    lazy = true,
     config = function()
       require "configs.which-key"
     end,
