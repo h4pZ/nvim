@@ -70,7 +70,7 @@ return {
 
   {
     "Vigemus/iron.nvim",
-    lazy = true,
+    lazy = false,
     config = function()
       require "configs.iron"
     end,
