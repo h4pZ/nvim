@@ -45,6 +45,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     ensure_installed = { "all", },
+    indent = { enable = true, disable = { "yaml", "python", "html"} },
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
