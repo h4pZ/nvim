@@ -45,7 +45,7 @@ M.ui = {
     MasonHeader = { bg = "orange" },
   },
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = {
       "            ⠀⠀⣀⣤⡤⠀⠀⠀⠀⠀⠀    ⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "       ⠀⠀⠀⢀⣾⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
