@@ -26,28 +26,17 @@ local setup = {
   -- add operators that will trigger motion and text object completion
   -- to enable all native operators, set the preset / operators plugin above
   -- operators = { gc = "Comments" },
-  key_labels = {
-    -- override the label used to display some keys. It doesn't effect WK in any other way.
-    -- For example:
-    -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
-    -- ["<tab>"] = "TAB",
-  },
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
-  popup_mappings = {
-    scroll_down = "<c-d>", -- binding to scroll down inside the popup
-    scroll_up = "<c-u>", -- binding to scroll up inside the popup
-  },
-  window = {
+  win = {
     border = "rounded", -- none, single, double, shadow
-    position = "bottom", -- bottom, top
-    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-    padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0,
+  --   position = "bottom", -- bottom, top
+    -- margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+    -- padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+    -- winblend = 0,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -55,18 +44,8 @@ local setup = {
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
-  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
-  triggers = "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
-  triggers_blacklist = {
-    -- list of mode / prefixes that should never be hooked by WhichKey
-    -- this is mostly relevant for key maps that start with a native binding
-    -- most people should not need to change this
-    i = { "j", "k" },
-    v = { "j", "k" },
-  },
 }
 
 local opts = {
@@ -248,5 +227,58 @@ local mappings = {
   },
 }
 
+require("which-key").add({
+  { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n" },
+  { "<leader>y", "<cmd>w!<CR>", desc = "Save", mode = "n" },
+  { "<leader>q", "<cmd>q!<CR>", desc = "Quit", mode = "n" },
+  { "<leader>C", "<cmd>close<CR>", desc = "Close Split", mode = "n" },
+  { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", mode = "n" },
+  { "<leader>P", "<cmd>Telescope projects<cr>", desc = "Projects", mode = "n" },
+
+  -- Telescope Find group
+  { "<leader>f", group = "Telescope find" },
+  { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files", mode = "n" },
+  { "<leader>fF", "<cmd>Telescope live_grep theme=dropdown<cr>", desc = "Find Text", mode = "n" },
+  { "<leader>ft", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", desc = "Text Current Buffer", mode = "n" },
+  { "<leader>fM", "<cmd>Telescope marks sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", desc = "Telescope Marks", mode = "n" },
+  { "<leader>fT", "<cmd>TodoTrouble<cr>", desc = "Todo Trouble", mode = "n" },
+  { "<leader>fh", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope", mode = "n" },
+  { "<leader>fc", "<cmd>lua require('telescope.builtin').commands()<cr>", desc = "Commands Telescope", mode = "n" },
+  { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<cr>", desc = "Notifications Telescope", mode = "n" },
+
+  -- Iron group
+  { "<leader>i", group = "Iron" },
+  { "<leader>if", "<cmd>IronFocus<cr>", desc = "Focus REPL", mode = "n" },
+  { "<leader>ih", "<cmd>IronHide<cr>", desc = "Hide REPL", mode = "n" },
+  { "<leader>is", "<cmd>lua require('iron.core').close_repl()<cr>", desc = "Stop REPL", mode = "n" },
+  { "<leader>iF", "<cmd>lua require('iron.core').send_file()<cr>", desc = "Send File", mode = "n" },
+  { "<leader>il", "<cmd>lua require('iron.core').send_line()<cr>", desc = "Send Line", mode = "n" },
+
+  -- DAP group
+  { "<leader>d", group = "DAP" },
+  { "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint", mode = "n" },
+  { "<leader>dy", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", desc = "Conditional Breakpoint", mode = "n" },
+  { "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", desc = "Continue", mode = "n" },
+  { "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", desc = "Eval", mode = "n" },
+  { "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step Over", mode = "n" },
+  { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step Into", mode = "n" },
+  { "<leader>db", "<cmd>lua require'dap'.step_back()<cr>", desc = "Step Back", mode = "n" },
+  { "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", desc = "Toggle REPL", mode = "n" },
+  { "<leader>dC", "<cmd>lua require'dap'.run_to_cursor()<cr>", desc = "Run To Cursor", mode = "n" },
+  { "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", desc = "Disconnect", mode = "n" },
+  { "<leader>dg", "<cmd>lua require'dap'.session()<cr>", desc = "Get Session", mode = "n" },
+  { "<leader>du", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step Out", mode = "n" },
+  { "<leader>dl", "<cmd>lua require'dap'.clear_breakpoints()<cr>", desc = "Clear Breakpoints", mode = "n" },
+  { "<leader>dp", "<cmd>lua require'dap'.pause.toggle()<cr>", desc = "Pause", mode = "n" },
+  { "<leader>dq", "<cmd>lua require'dapui'.toggle()<cr>", desc = "Toggle DAP UI", mode = "n" },
+  { "<leader>dT", "<cmd>lua require'dap'.terminate()<cr>", desc = "Terminate Session", mode = "n" },
+  { "<leader>dm", "<cmd>lua require'dap-python'.test_method()<cr>", desc = "Test Method", mode = "n" },
+  { "<leader>da", "<cmd>lua require'dap-python'.test_class()<cr>", desc = "Test Class", mode = "n" },
+  { "<leader>ds", "<cmd>lua require'dap-python'.debug_selection()<cr>", desc = "Debug Selection", mode = "n" },
+
+  -- Additional groups and bindings would follow here in a similar pattern
+})
+
+
 which_key.setup(setup)
-which_key.register(mappings, opts)
+-- which_key.register(mappings, opts)

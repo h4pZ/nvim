@@ -79,12 +79,15 @@ M.ui = {
       { "  Themes", "Spc t h", "Telescope themes" },
     },
   },
-  theme = "real-cat",
 
   -- hl_override = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
   -- },
+}
+
+M.base46 = {
+  theme = "real-cat",
 }
 
 return M
