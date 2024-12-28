@@ -33,7 +33,7 @@ local setup = {
   },
   win = {
     border = "rounded", -- none, single, double, shadow
-  --   position = "bottom", -- bottom, top
+    --   position = "bottom", -- bottom, top
     -- margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     -- padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
     -- winblend = 0,
@@ -49,23 +49,12 @@ local setup = {
 }
 
 -- For Transparency
-local is_transparent = true -- Start with transparency by default
+local custom_hl = require("configs.custom-hl")
 
 function toggle_transparency()
   require('base46').toggle_transparency()
-
-  if not is_transparent then
-    -- Enable transparency and adjust highlight groups
-    vim.cmd("hi TabLine guibg=NONE")
-    vim.cmd("hi TbBufOn guibg=#191724")
-    vim.cmd("hi TbBufOnClose guibg=#191724")
-    vim.cmd("hi TbBufOnModified guibg=#191724")
-  end
-
-  -- Toggle the state
-  is_transparent = not is_transparent
+  custom_hl.set_custom_hl()
 end
-
 
 require("which-key").add({
   { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n" },
@@ -77,14 +66,20 @@ require("which-key").add({
 
   -- Telescope Find group
   { "<leader>f", group = "Telescope find" },
-  { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Find files", mode = "n" },
+  { "<leader>ff",
+    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    desc = "Find files", mode = "n" },
   { "<leader>fF", "<cmd>Telescope live_grep theme=dropdown<cr>", desc = "Find Text", mode = "n" },
-  { "<leader>ft", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", desc = "Text Current Buffer", mode = "n" },
-  { "<leader>fM", "<cmd>Telescope marks sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", desc = "Telescope Marks", mode = "n" },
+  { "<leader>ft",
+    "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>",
+    desc = "Text Current Buffer", mode = "n" },
+  { "<leader>fM", "<cmd>Telescope marks sorting_strategy=ascending prompt_position=top theme=dropdown<CR>",
+    desc = "Telescope Marks", mode = "n" },
   { "<leader>fT", "<cmd>TodoTrouble<cr>", desc = "Todo Trouble", mode = "n" },
   { "<leader>fh", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope", mode = "n" },
   { "<leader>fc", "<cmd>lua require('telescope.builtin').commands()<cr>", desc = "Commands Telescope", mode = "n" },
-  { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<cr>", desc = "Notifications Telescope", mode = "n" },
+  { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<cr>", desc = "Notifications Telescope",
+    mode = "n" },
 
   -- Iron group
   { "<leader>i", group = "Iron" },
@@ -97,7 +92,8 @@ require("which-key").add({
   -- DAP group
   { "<leader>d", group = "DAP" },
   { "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint", mode = "n" },
-  { "<leader>dy", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", desc = "Conditional Breakpoint", mode = "n" },
+  { "<leader>dy", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+    desc = "Conditional Breakpoint", mode = "n" },
   { "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", desc = "Continue", mode = "n" },
   { "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", desc = "Eval", mode = "n" },
   { "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step Over", mode = "n" },
@@ -118,9 +114,12 @@ require("which-key").add({
 
   -- Neogen group
   { "<leader>n", group = "Neogen" },
-  { "<leader>nn", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'numpydoc' }})<cr>", desc = "Numpy docstring", mode = "n" },
-  { "<leader>ng", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'google_docstrings' }})<cr>", desc = "Google docstring", mode = "n" },
-  { "<leader>nr", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>", desc = "reST docstring", mode = "n" },
+  { "<leader>nn", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'numpydoc' }})<cr>",
+    desc = "Numpy docstring", mode = "n" },
+  { "<leader>ng", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'google_docstrings' }})<cr>",
+    desc = "Google docstring", mode = "n" },
+  { "<leader>nr", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>",
+    desc = "reST docstring", mode = "n" },
 
   -- Markdown group
   { "<leader>m", group = "Markdown" },
@@ -200,7 +199,8 @@ require("which-key").add({
 
   -- Copilot group
   { "<leader>G", group = "Copilot" },
-  { "<leader>Gt", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger", mode = "n" },
+  { "<leader>Gt", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger",
+    mode = "n" },
   { "<leader>Gv", "<cmd>lua require('copilot.suggestion').is_visible()<cr>", desc = "Is visible?", mode = "n" },
   { "<leader>Ga", "<cmd>lua require('copilot.suggestion').accept()<cr>", desc = "Accept", mode = "n" },
   { "<leader>Gw", "<cmd>lua require('copilot.suggestion').accept_word()<cr>", desc = "Accept word", mode = "n" },
