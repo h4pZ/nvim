@@ -276,7 +276,96 @@ require("which-key").add({
   { "<leader>da", "<cmd>lua require'dap-python'.test_class()<cr>", desc = "Test Class", mode = "n" },
   { "<leader>ds", "<cmd>lua require'dap-python'.debug_selection()<cr>", desc = "Debug Selection", mode = "n" },
 
-  -- Additional groups and bindings would follow here in a similar pattern
+  -- Neogen group
+  { "<leader>n", group = "Neogen" },
+  { "<leader>nn", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'numpydoc' }})<cr>", desc = "Numpy docstring", mode = "n" },
+  { "<leader>ng", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'google_docstrings' }})<cr>", desc = "Google docstring", mode = "n" },
+  { "<leader>nr", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>", desc = "reST docstring", mode = "n" },
+
+  -- Markdown group
+  { "<leader>m", group = "Markdown" },
+  { "<leader>mp", "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview", mode = "n" },
+  { "<leader>ms", "<cmd>MarkdownPreviewStop<cr>", desc = "Markdown Preview Stop", mode = "n" },
+  { "<leader>mt", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview Toggle", mode = "n" },
+
+  -- Git group
+  { "<leader>g", group = "Git" },
+  { "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit", mode = "n" },
+  { "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "Next Hunk", mode = "n" },
+  { "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", desc = "Prev Hunk", mode = "n" },
+  { "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", desc = "Blame", mode = "n" },
+  { "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", desc = "Preview Hunk", mode = "n" },
+  { "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", desc = "Reset Hunk", mode = "n" },
+  { "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", desc = "Reset Buffer", mode = "n" },
+  { "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", desc = "Stage Hunk", mode = "n" },
+  { "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk", mode = "n" },
+  { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file", mode = "n" },
+  { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", mode = "n" },
+  { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit", mode = "n" },
+  { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff", mode = "n" },
+  { "<leader>gD", "<cmd>wincmd p | q<cr>", desc = "Close Diff", mode = "n" },
+
+  -- LSP group
+  { "<leader>l", group = "LSP" },
+  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "n" },
+  { "<leader>ld", "<cmd>TroubleToggle<cr>", desc = "Diagnostics", mode = "n" },
+  { "<leader>lw", "<cmd>Telescope lsp_workspace_diagnostics<cr>", desc = "Workspace Diagnostics", mode = "n" },
+  { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format", mode = "n" },
+  { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", mode = "n" },
+  { "<leader>lI", "<cmd>Mason<cr>", desc = "Installer Info", mode = "n" },
+  { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostic", mode = "n" },
+  { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic", mode = "n" },
+  { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action", mode = "n" },
+  { "<leader>lo", "<cmd>SymbolsOutline<cr>", desc = "Outline", mode = "n" },
+  { "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", desc = "Quickfix", mode = "n" },
+  { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename", mode = "n" },
+  { "<leader>lR", "<cmd>TroubleToggle lsp_references<cr>", desc = "References", mode = "n" },
+  { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols", mode = "n" },
+  { "<leader>lt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Type Definition", mode = "n" },
+  { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols", mode = "n" },
+
+  -- Search group
+  { "<leader>s", group = "Search" },
+  { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", mode = "n" },
+  { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Find Help", mode = "n" },
+  { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages", mode = "n" },
+  { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File", mode = "n" },
+  { "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers", mode = "n" },
+  { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", mode = "n" },
+  { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands", mode = "n" },
+  { "<leader>st", "<cmd>Telescope themes<cr>", desc = "Themes", mode = "n" },
+
+  -- Hop group
+  { "<leader>H", group = "Hop" },
+  { "<leader>Hh", "<cmd>HopChar2<cr>", desc = "Hop 2 characters", mode = "n" },
+  { "<leader>Hp", "<cmd>HopPattern<cr>", desc = "Hop to pattern", mode = "n" },
+  { "<leader>HH", "<cmd>HopWord<cr>", desc = "Hop to word", mode = "n" },
+
+  -- Terminal group
+  { "<leader>t", group = "Terminal" },
+  { "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node", mode = "n" },
+  { "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<cr>", desc = "NCDU", mode = "n" },
+  { "<leader>tt", "<cmd>lua _HTOP_TOGGLE()<cr>", desc = "Htop", mode = "n" },
+  { "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", desc = "Python", mode = "n" },
+  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float", mode = "n" },
+  { "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal", mode = "n" },
+  { "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical", mode = "n" },
+
+  -- Tabs group
+  { "<leader>T", group = "Tabs" },
+  { "<leader>Tn", "<cmd>tabnew<cr>", desc = "New Tab", mode = "n" },
+  { "<leader>Tc", "<cmd>tabclose<cr>", desc = "Close Current Tab", mode = "n" },
+
+  -- Copilot group
+  { "<leader>G", group = "Copilot" },
+  { "<leader>Gt", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger", mode = "n" },
+  { "<leader>Gv", "<cmd>lua require('copilot.suggestion').is_visible()<cr>", desc = "Is visible?", mode = "n" },
+  { "<leader>Ga", "<cmd>lua require('copilot.suggestion').accept()<cr>", desc = "Accept", mode = "n" },
+  { "<leader>Gw", "<cmd>lua require('copilot.suggestion').accept_word()<cr>", desc = "Accept word", mode = "n" },
+  { "<leader>Gl", "<cmd>lua require('copilot.suggestion').accept_line()<cr>", desc = "Accept line", mode = "n" },
+  { "<leader>Gn", "<cmd>lua require('copilot.suggestion').next()<cr>", desc = "Next suggestion", mode = "n" },
+  { "<leader>Gp", "<cmd>lua require('copilot.suggestion').prev()<cr>", desc = "Previous suggestion", mode = "n" },
+  { "<leader>Gd", "<cmd>lua require('copilot.suggestion').dismiss()<cr>", desc = "Dismiss suggestion", mode = "n" },
 })
 
 

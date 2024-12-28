@@ -6,6 +6,9 @@ local M = {}
 
 M.ui = {
   tabufline = { order = { "treeOffset", "buffers", "tabs" } },
+  statusline = {
+    theme = "minimal",
+  },
   hl_override = {
     NvDashAscii = { fg = "#f70067", bg = "black" },
 
@@ -45,7 +48,7 @@ M.ui = {
     MasonHeader = { bg = "orange" },
   },
   nvdash = {
-    load_on_startup = false,
+    load_on_startup = true,
     header = {
       "            ⠀⠀⣀⣤⡤⠀⠀⠀⠀⠀⠀    ⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "       ⠀⠀⠀⢀⣾⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
@@ -87,7 +90,8 @@ M.ui = {
 }
 
 M.base46 = {
-  theme = "real-cat",
+  theme = "rosepine",
+  transparency = false,
 }
 
 return M

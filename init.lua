@@ -64,3 +64,14 @@ vim.cmd('hi WhichKey guifg=#F8BD96')
 vim.cmd('hi WhichKeyDesc guifg=#B5E8E0')
 vim.cmd('hi WhichKeyGroup guifg=#c7d1ff')
 vim.cmd('hi WhichKeyValue guifg=#c7d1ff')
+
+vim.cmd('hi SnacksDashboardHeader guifg=#f70067')
+vim.cmd('hi SnacksDashboardDesc guifg=#ebbcba')
+vim.cmd('hi SnacksDashboardIcon guifg=#ebbcba')
+vim.cmd('hi SnacksDashboardKey guifg=#f6c177')
+vim.cmd('hi SnacksDashboardFooter guifg=#f6c177')
+vim.cmd('hi SnacksDashboardNormal guifg=#f6c177')
+vim.cmd('hi SnacksDashboardSpecial guifg=#e0def4')
+
+-- vim.cmd('hi Normal guibg=#11111b')
+
