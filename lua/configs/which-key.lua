@@ -130,7 +130,7 @@ require("which-key").add({
 
   -- Git group
   { "<leader>g", group = "Git" },
-  { "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit", mode = "n" },
+  { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Lazygit", mode = "n" },
   { "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "Next Hunk", mode = "n" },
   { "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", desc = "Prev Hunk", mode = "n" },
   { "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", desc = "Blame", mode = "n" },
@@ -141,6 +141,7 @@ require("which-key").add({
   { "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk", mode = "n" },
   { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file", mode = "n" },
   { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", mode = "n" },
+  { "<leader>gB", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "Buffer Commits", mode = "n" },
   { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit", mode = "n" },
   { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff", mode = "n" },
   { "<leader>gD", "<cmd>wincmd p | q<cr>", desc = "Close Diff", mode = "n" },

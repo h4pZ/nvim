@@ -260,7 +260,7 @@ return {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠈⠋⠁⠠⠁⠀⠈⠁⠀⠀⠀⠀⠀⠀     
                                       
               『ミミッキュ』          
-]],
+]]         ,
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
             { icon = " ", key = "P", desc = "Projects", action = ":Telescope projects" },
@@ -283,5 +283,26 @@ return {
   { "nvzone/volt", lazy = true },
 
   { "nvzone/minty", cmd = { "Shades", "Huefy" }, },
+
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    }
+  }
 
 }
