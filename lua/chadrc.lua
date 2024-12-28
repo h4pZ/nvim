@@ -91,7 +91,7 @@ M.ui = {
 
 M.base46 = {
   theme = "rosepine",
-  transparency = false,
+  transparency = true,
 }
 
 return M

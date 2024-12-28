@@ -48,184 +48,24 @@ local setup = {
   -- triggers = {"<leader>"} -- or specify a list manually
 }
 
-local opts = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
+-- For Transparency
+local is_transparent = true -- Start with transparency by default
 
-local mappings = {
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["y"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["C"] = { "<cmd>close<CR>", "Close Split" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+function toggle_transparency()
+  require('base46').toggle_transparency()
 
-  f = {
-    name = "Telescope find",
-    f = {" <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
-    F = { "<cmd>Telescope live_grep theme=dropdown<cr>", "Find Text" },
-    t = { "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Text Current Buffer"},
-    M = { "<cmd>Telescope marks sorting_strategy=ascending prompt_position=top theme=dropdown<CR>", "Telescope Marks"},
-    T = { "<cmd>TodoTrouble<cr>", "Todo Trouble" },
-    h = { "<cmd>TodoTelescope<cr>", "Todo Telescope" },
-    c = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands Telescope" },
-    n = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notifications Telescope" },
-  },
+  if not is_transparent then
+    -- Enable transparency and adjust highlight groups
+    vim.cmd("hi TabLine guibg=NONE")
+    vim.cmd("hi TbBufOn guibg=#191724")
+    vim.cmd("hi TbBufOnClose guibg=#191724")
+    vim.cmd("hi TbBufOnModified guibg=#191724")
+  end
 
-  i = {
-    name = "Iron",
-    f = {" <cmd>IronFocus<cr>", "Focus REPL"},
-    h = {" <cmd>IronHide<cr>", "Hide REPL"},
-    s = {" <cmd>lua require('iron.core').close_repl()<cr>", "Stop REPL"},
-    F = {" <cmd>lua require('iron.core').send_file()<cr>", "Send File"},
-    l = {" <cmd>lua require('iron.core').send_line()<cr>", "Send Line"},
-  },
+  -- Toggle the state
+  is_transparent = not is_transparent
+end
 
-  d = {
-    name = "DAP",
-    t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-    y = {"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Conditional Breakpoint"},
-    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue"},
-    e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval"},
-    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over"},
-    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into"},
-    b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle repl"},
-    C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-    d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-    g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-    u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-    l = { "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear Breakpoinst"},
-    p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
-    q = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle dap-ui" },
-    T = { "<cmd>lua require'dap'.terminate()<cr>", "Terminates Session" },
-    m = { "<cmd>lua require'dap-python'.test_method()<cr>", "Test Method" },
-    a = { "<cmd>lua require'dap-python'.test_class()<cr>", "Test Class" },
-    s = { "<cmd>lua require'dap-python'.debug_selection()<cr>", "Debug Selection" },
-  },
-
-  n = {
-    name = "Neogen",
-    n = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'numpydoc' }})<cr>", "Numpy docstring"},
-    g = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'google_docstrings' }})<cr>", "Google docstring"},
-    r = { "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>", "reST docstring"},
-  },
-
-  m = {
-    name = "Markdown",
-    p = { "<cmd>MarkdownPreview<cr>", "Markdown Preview"},
-    s = { "<cmd>MarkdownPreviewStop<cr>", "Markdown Preview Stop"},
-    t = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview Toggle"},
-  },
-
-  g = {
-    name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
-    },
-    D = { "<cmd>wincmd p | q<cr>", "Close Diff" },
-  },
-
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
-    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>Mason<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    o = { "<cmd>SymbolsOutline<cr>", "Outline" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    t = {"<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition"},
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-  },
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    c = { "<cmd>Telescope commands<cr>", "Commands" },
-    t = { "<cmd>Telescope themes<cr>", "Commands" },
-    },
-
-  H = {
-    name = "Hop",
-    h = { "<cmd>HopChar2<cr>", "Hop 2 characters" },
-    p = { "<cmd>HopPattern<cr>", "Hop to pattern" },
-    H = { "<cmd>HopWord<cr>", "Hop to word" },
-  },
-
-  t = {
-    name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-  },
-
-  T = {
-    name = "Tabs",
-    n = {"<cmd>tabnew<cr>", "New Tab"},
-    c = {"<cmd>tabclose<cr>", "Close Current Tab"}
-    },
-
-  G = {
-    name = "Copilot",
-    t = { "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", "Toggle auto trigger"},
-    v = { "<cmd>lua require('copilot.suggestion').is_visible()<cr>", "Is visible?"},
-    a = { "<cmd>lua require('copilot.suggestion').accept()<cr>", "Accept"},
-    w = { "<cmd>lua require('copilot.suggestion').accept_word()<cr>", "Accept word"},
-    l = { "<cmd>lua require('copilot.suggestion').accept_line()<cr>", "Accept line"},
-    n = { "<cmd>lua require('copilot.suggestion').next()<cr>", "Next suggestion"},
-    p = { "<cmd>lua require('copilot.suggestion').prev()<cr>", "Previous suggestion"},
-    d = { "<cmd>lua require('copilot.suggestion').dismiss()<cr>", "Dismiss suggestion"},
-  },
-}
 
 require("which-key").add({
   { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", mode = "n" },
@@ -355,6 +195,7 @@ require("which-key").add({
   { "<leader>T", group = "Tabs" },
   { "<leader>Tn", "<cmd>tabnew<cr>", desc = "New Tab", mode = "n" },
   { "<leader>Tc", "<cmd>tabclose<cr>", desc = "Close Current Tab", mode = "n" },
+  { "<leader>Tt", "<cmd>lua toggle_transparency()<cr>", desc = "Toggle Transparency", mode = "n" },
 
   -- Copilot group
   { "<leader>G", group = "Copilot" },
