@@ -56,7 +56,7 @@ return {
   -- My plugins
   {
     "folke/which-key.nvim",
-    lazy = true,
+    lazy = false,
     config = function()
       require "configs.which-key"
     end,
@@ -278,6 +278,10 @@ return {
       statuscolumn = { enabled = true },
       words = { enabled = true },
     },
-  }
+  },
+
+  { "nvzone/volt", lazy = true },
+
+  { "nvzone/minty", cmd = { "Shades", "Huefy" }, },
 
 }
