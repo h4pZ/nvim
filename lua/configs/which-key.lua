@@ -208,6 +208,7 @@ require("which-key").add({
   { "<leader>Gn", "<cmd>lua require('copilot.suggestion').next()<cr>", desc = "Next suggestion", mode = "n" },
   { "<leader>Gp", "<cmd>lua require('copilot.suggestion').prev()<cr>", desc = "Previous suggestion", mode = "n" },
   { "<leader>Gd", "<cmd>lua require('copilot.suggestion').dismiss()<cr>", desc = "Dismiss suggestion", mode = "n" },
+  { "<leader>Gt", "<cmd>CopilotChatToggle<cr>", desc = "Toggle CopilotChat", mode = "n" },
 
   -- Minty and Volt
   { "<leader>v", group = "Volt" },
