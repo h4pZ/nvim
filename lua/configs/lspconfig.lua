@@ -1,9 +1,9 @@
--- EXAMPLE
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "vscode-html-language-server", "svelte" }
+local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "vscode-html-language-server", "svelte",
+  "gopls", "golangci_lint_ls" }
 
 
 local on_attach = function(client, bufnr)
@@ -47,4 +47,17 @@ lspconfig.ts_ls.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
+}
+
+-- golang
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      -- Set tab width to 4 spaces
+      ["formatting.tabWidth"] = 4,
+    },
+  },
 }
