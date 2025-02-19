@@ -55,6 +55,11 @@ return {
   },
   -- My plugins
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+  },
+
+  {
     "folke/which-key.nvim",
     lazy = false,
     config = function()
