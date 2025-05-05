@@ -3,6 +3,15 @@ if not status_ok then
   return
 end
 
+-- util that opens the ":" prompt with some text already typed in
+local function prefill_cmdline(text)
+  -- replace_termcodes() makes <Esc>, <CR>, … behave when we feed keys
+  local keys = vim.api.nvim_replace_termcodes(":" .. text, true, false, true)
+  -- "n" = behave like normal-mode input,  false = don’t remap
+  vim.api.nvim_feedkeys(keys, "n", false)
+end
+
+
 local setup = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -78,8 +87,6 @@ require("which-key").add({
   { "<leader>fT", "<cmd>TodoTrouble<cr>", desc = "Todo Trouble", mode = "n" },
   { "<leader>fh", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope", mode = "n" },
   { "<leader>fc", "<cmd>lua require('telescope.builtin').commands()<cr>", desc = "Commands Telescope", mode = "n" },
-  { "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<cr>", desc = "Notifications Telescope",
-    mode = "n" },
 
   -- Iron group
   { "<leader>i", group = "Iron" },
@@ -120,6 +127,8 @@ require("which-key").add({
     desc = "Google docstring", mode = "n" },
   { "<leader>nr", "<cmd>lua require'neogen'.generate({ annotation_convention = { python = 'reST' }})<cr>",
     desc = "reST docstring", mode = "n" },
+  { "<leader>nh", "<cmd>lua Snacks.notifier.show_history()<cr>", desc = "Notifications Snacks", mode = "n" },
+  { "<leader>nH", "<cmd>lua Snacks.notifier.hide()<cr>", desc = "Hide Notifications Snacks", mode = "n"},
 
   -- Markdown group
   { "<leader>m", group = "Markdown" },
@@ -173,7 +182,8 @@ require("which-key").add({
   { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File", mode = "n" },
   { "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers", mode = "n" },
   { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", mode = "n" },
-  { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands", mode = "n" },
+  { "<leader>sc", "<cmd>lua require('snacks').picker.commands()<cr>", desc = "Commands Snack", mode = "n" },
+  { "<leader>sH", "<cmd>lua require('snacks').picker.command_history()<cr>", desc = "Commands History", mode = "n" },
   { "<leader>st", "<cmd>Telescope themes<cr>", desc = "Themes", mode = "n" },
 
   -- Hop group
@@ -199,17 +209,27 @@ require("which-key").add({
   { "<leader>Tt", "<cmd>lua toggle_transparency()<cr>", desc = "Toggle Transparency", mode = "n" },
 
   -- Copilot group
-  { "<leader>G", group = "Copilot" },
-  { "<leader>Gt", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger",
+  { "<leader>a", group = "ai", mode = { "n", "v" }, icon = { icon = ""} },
+  { "<leader>aT", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger",
     mode = "n" },
-  { "<leader>Gv", "<cmd>lua require('copilot.suggestion').is_visible()<cr>", desc = "Is visible?", mode = "n" },
-  { "<leader>Ga", "<cmd>lua require('copilot.suggestion').accept()<cr>", desc = "Accept", mode = "n" },
-  { "<leader>Gw", "<cmd>lua require('copilot.suggestion').accept_word()<cr>", desc = "Accept word", mode = "n" },
-  { "<leader>Gl", "<cmd>lua require('copilot.suggestion').accept_line()<cr>", desc = "Accept line", mode = "n" },
-  { "<leader>Gn", "<cmd>lua require('copilot.suggestion').next()<cr>", desc = "Next suggestion", mode = "n" },
-  { "<leader>Gp", "<cmd>lua require('copilot.suggestion').prev()<cr>", desc = "Previous suggestion", mode = "n" },
-  { "<leader>Gd", "<cmd>lua require('copilot.suggestion').dismiss()<cr>", desc = "Dismiss suggestion", mode = "n" },
-  { "<leader>Gt", "<cmd>CopilotChatToggle<cr>", desc = "Toggle CopilotChat", mode = "n" },
+  { "<leader>at", "<cmd>CopilotChatToggle<cr>", desc = "Toggle CopilotChat", mode = "n" },
+  { "<leader>aq", "<cmd>CopilotChatStop<cr>", desc = "Stop CopilotChat Completion", mode = "n" },
+  { "<leader>as", function() prefill_cmdline("CopilotChatSave ") end, desc = "Save CopilotChat Chat", mode = "n" },
+  { "<leader>al", function() prefill_cmdline("CopilotChatLoad ") end, desc = "Load CopilotChat Chat", mode = "n" },
+  { "<leader>ap", "<cmd>CopilotChatPrompts<cr>", desc = "Show CopilotChat Prompts", mode = "n" },
+  { "<leader>am", "<cmd>CopilotChatModels<cr>", desc = "Show CopilotChat Models", mode = "n" },
+  { "<leader>aa", "<cmd>CopilotChatAgents<cr>", desc = "Show CopilotChat Agents", mode = "n" },
+  { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat Explain", mode = "v" },
+  { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat Review", mode = "v" },
+  { "<leader>af", "<cmd>CopilotChatFix<cr>", desc = "CopilotChat Fix", mode = "v" },
+  { "<leader>ao", "<cmd>CopilotChatOptimize<cr>", desc = "CopilotChat Optimize", mode = "v" },
+  { "<leader>ad", "<cmd>CopilotChatDocs<cr>", desc = "Generate Docs", mode = "v" },
+  { "<leader>aT", "<cmd>CopilotChatTests<cr>", desc = "Generate Test", mode = "v" },
+  { "<leader>ac", "<cmd>CopilotChatCommit<cr>", desc = "Generate Commit Message", mode = "n" },
+  { "<leader>ac", "<cmd>CopilotChatCommit<cr>", desc = "Generate Commit Message for selecction", mode = "v" },
+
+    -- -- ChatGPT group
+    --
 
   -- Minty and Volt
   { "<leader>v", group = "Volt" },
