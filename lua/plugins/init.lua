@@ -338,6 +338,14 @@ return {
     config = function()
       require "configs.render-markdown"
     end,
-  }
+  },
 
+  {
+    'akinsho/toggleterm.nvim',
+    lazy=false,
+    version = "*",
+    config = function()
+        require "configs.toggle-term"
+    end
+  },
 }

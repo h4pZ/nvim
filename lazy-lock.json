@@ -44,6 +44,7 @@
   "snacks.nvim": { "branch": "main", "commit": "743f8b3fee780780d8e201960a4a295dc5187e9b" },
   "telescope.nvim": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
+  "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "trouble.nvim": { "branch": "main", "commit": "50481f414bd3c1a40122c1d759d7e424d5fafe84" },
   "ui": { "branch": "v3.0", "commit": "adcc97d7c7b97d3527a31338615751d2503fe0a4" },
   "volt": { "branch": "main", "commit": "f02b065caf0327bf4d443ff6d91cb0edd6948ddb" },
