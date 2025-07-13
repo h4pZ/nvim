@@ -166,7 +166,7 @@ require("which-key").add({
   { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostic", mode = "n" },
   { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic", mode = "n" },
   { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action", mode = "n" },
-  { "<leader>lo", "<cmd>SymbolsOutline<cr>", desc = "Outline", mode = "n" },
+  { "<leader>lo", "<cmd>AerialToggle<cr>", desc = "Outline", mode = "n" },
   { "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", desc = "Quickfix", mode = "n" },
   { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename", mode = "n" },
   { "<leader>lR", "<cmd>TroubleToggle lsp_references<cr>", desc = "References", mode = "n" },

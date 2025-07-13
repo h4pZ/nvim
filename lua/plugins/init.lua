@@ -348,4 +348,14 @@ return {
         require "configs.toggle-term"
     end
   },
+  {
+    'stevearc/aerial.nvim',
+    lazy = false,
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+       "nvim-treesitter/nvim-treesitter",
+       "nvim-tree/nvim-web-devicons"
+    },
+  }
 }
