@@ -2,7 +2,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "vscode-html-language-server", "svelte",
+local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "svelte",
   "gopls", "golangci_lint_ls" }
 
 
