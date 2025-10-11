@@ -51,13 +51,14 @@ lspconfig.ts_ls.setup {
 
 -- golang
 lspconfig.gopls.setup {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    vim.bo[bufnr].tabstop = 4
+    vim.bo[bufnr].shiftwidth = 4
+    vim.bo[bufnr].expandtab = true
+  end,
   on_init = on_init,
   capabilities = capabilities,
-  settings = {
-    gopls = {
-      -- Set tab width to 4 spaces
-      ["formatting.tabWidth"] = 4,
-    },
-  },
 }
+
+
