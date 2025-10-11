@@ -1,7 +1,6 @@
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
 local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "svelte",
   "gopls", "golangci_lint_ls" }
 
@@ -35,22 +34,23 @@ end
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-  }
+  })
 end
 
--- typescript
-lspconfig.ts_ls.setup {
+vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-}
+})
+
+
 
 -- golang
-lspconfig.gopls.setup {
+vim.lsp.config("gopls", {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     vim.bo[bufnr].tabstop = 4
@@ -59,6 +59,6 @@ lspconfig.gopls.setup {
   end,
   on_init = on_init,
   capabilities = capabilities,
-}
+})
 
-
+vim.lsp.enable(servers)
