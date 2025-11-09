@@ -357,5 +357,15 @@ return {
        "nvim-treesitter/nvim-treesitter",
        "nvim-tree/nvim-web-devicons"
     },
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    lazy = false,
+    dependencies = {
+      'kevinhwang91/promise-async'
+    },
+    config = function()
+      require "configs.ufo"
+    end,
   }
 }

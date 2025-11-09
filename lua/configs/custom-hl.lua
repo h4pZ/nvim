@@ -25,6 +25,10 @@ function M.set_custom_hl()
   vim.cmd('hi WhichKeyGroup guifg=#c7d1ff')
   vim.cmd('hi WhichKeyValue guifg=#c7d1ff')
 
+  -- UFO Preview window highlights
+  vim.cmd('hi UfoPreviewNormal guibg=#262431')
+  vim.cmd('hi UfoPreviewBorder guifg=#a8f9c4')
+
   vim.cmd('hi SnacksDashboardHeader guifg=#f70067')
   vim.cmd('hi SnacksDashboardDesc guifg=#ebbcba')
   vim.cmd('hi SnacksDashboardIcon guifg=#ebbcba')
