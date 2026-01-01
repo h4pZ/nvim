@@ -1,3 +1,0 @@
-- Add todo trouble and telescope todo.
-- Add lazygit with the term provided by nvim or just add toggle term.
-- Add readme.

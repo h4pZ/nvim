@@ -210,7 +210,7 @@ require("which-key").add({
 
   -- Copilot group
   { "<leader>a", group = "ai", mode = { "n", "v" }, icon = { icon = ""} },
-  { "<leader>aT", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", desc = "Toggle auto trigger",
+  { "<leader>aT", "<cmd>lua require('configs.copilot-toggle').toggle()<cr>", desc = "Toggle Copilot",
     mode = "n" },
   { "<leader>at", "<cmd>CopilotChatToggle<cr>", desc = "Toggle CopilotChat", mode = "n" },
   { "<leader>aq", "<cmd>CopilotChatStop<cr>", desc = "Stop CopilotChat Completion", mode = "n" },

@@ -138,10 +138,10 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "VimEnter",
-    lazy = false,
+    lazy = true,
     config = function()
       require('copilot').setup({
+        autostart = false,
         panel = {
           enabled = false,
           auto_refresh = true,
@@ -170,7 +170,7 @@ return {
   {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
-    lazy = false,
+    lazy = true,
     config = function()
       require("copilot_cmp").setup({
         formatters = {
