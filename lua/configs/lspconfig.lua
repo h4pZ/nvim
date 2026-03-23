@@ -2,7 +2,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local servers = { "html", "cssls", "pyright", "ruff", "clangd", "rust_analyzer", "svelte",
-  "gopls", "golangci_lint_ls" }
+  "gopls", "golangci_lint_ls", "ty" }
 
 
 local on_attach = function(client, bufnr)
