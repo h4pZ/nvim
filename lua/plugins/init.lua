@@ -44,12 +44,10 @@ return {
   --
   {
     "nvim-treesitter/nvim-treesitter",
-    ensure_installed = { "all", },
-    indent = { enable = true, disable = { "yaml", "python", "html" } },
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
-        "html", "css", "python"
+        "html", "css", "python",
       },
     },
   },
@@ -128,7 +126,7 @@ return {
   },
 
   {
-    "phaazon/hop.nvim",
+    "smoka7/hop.nvim",
     lazy = false,
     config = function()
       require "configs.hop"

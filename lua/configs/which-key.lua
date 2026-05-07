@@ -161,7 +161,7 @@ require("which-key").add({
   { "<leader>ld", "<cmd>TroubleToggle<cr>", desc = "Diagnostics", mode = "n" },
   { "<leader>lw", "<cmd>Telescope lsp_workspace_diagnostics<cr>", desc = "Workspace Diagnostics", mode = "n" },
   { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format", mode = "n" },
-  { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", mode = "n" },
+  { "<leader>li", "<cmd>checkhealth vim.lsp<cr>", desc = "Info", mode = "n" },
   { "<leader>lI", "<cmd>Mason<cr>", desc = "Installer Info", mode = "n" },
   { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Next Diagnostic", mode = "n" },
   { "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic", mode = "n" },

@@ -62,3 +62,4 @@ vim.lsp.config("gopls", {
 })
 
 vim.lsp.enable(servers)
+vim.lsp.enable("ts_ls")
