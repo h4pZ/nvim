@@ -38,6 +38,9 @@ function M.set_custom_hl()
   vim.cmd('hi SnacksDashboardSpecial guifg=#e0def4')
 
   -- vim.cmd('hi Normal guibg=#11111b')
+  vim.cmd('hi @comment guifg=#7c7a8e')
+  vim.cmd('hi LineNr guifg=#7c7a8e')
+
   vim.cmd('hi TabLine guibg=NONE')
   vim.cmd('hi TbBufOn guibg=#191724')
   vim.cmd('hi TbBufOnClose guibg=#191724')

@@ -21,7 +21,8 @@ return {
     opts = {
       ensure_installed = {
         "lua-language-server", "stylua",
-        "html-lsp", "css-lsp", "prettier"
+        "html-lsp", "css-lsp", "prettier",
+        "pyrefly",
       },
     },
   },
@@ -44,6 +45,7 @@ return {
   --
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
