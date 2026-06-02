@@ -27,15 +27,6 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 end
 
-cmp.event:on("menu_opened", function()
-  vim.b.copilot_suggestion_hidden = false
-end)
-
-cmp.event:on("menu_closed", function()
-  vim.b.copilot_suggestion_hidden = false
-end)
-
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
@@ -63,7 +54,6 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
-  Copilot = ""
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -145,7 +135,6 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },

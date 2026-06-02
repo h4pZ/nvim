@@ -208,29 +208,6 @@ require("which-key").add({
   { "<leader>Tc", "<cmd>tabclose<cr>", desc = "Close Current Tab", mode = "n" },
   { "<leader>Tt", "<cmd>lua toggle_transparency()<cr>", desc = "Toggle Transparency", mode = "n" },
 
-  -- Copilot group
-  { "<leader>a", group = "ai", mode = { "n", "v" }, icon = { icon = ""} },
-  { "<leader>aT", "<cmd>lua require('configs.copilot-toggle').toggle()<cr>", desc = "Toggle Copilot",
-    mode = "n" },
-  { "<leader>at", "<cmd>CopilotChatToggle<cr>", desc = "Toggle CopilotChat", mode = "n" },
-  { "<leader>aq", "<cmd>CopilotChatStop<cr>", desc = "Stop CopilotChat Completion", mode = "n" },
-  { "<leader>as", function() prefill_cmdline("CopilotChatSave ") end, desc = "Save CopilotChat Chat", mode = "n" },
-  { "<leader>al", function() prefill_cmdline("CopilotChatLoad ") end, desc = "Load CopilotChat Chat", mode = "n" },
-  { "<leader>ap", "<cmd>CopilotChatPrompts<cr>", desc = "Show CopilotChat Prompts", mode = "n" },
-  { "<leader>am", "<cmd>CopilotChatModels<cr>", desc = "Show CopilotChat Models", mode = "n" },
-  { "<leader>aa", "<cmd>CopilotChatAgents<cr>", desc = "Show CopilotChat Agents", mode = "n" },
-  { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat Explain", mode = "v" },
-  { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat Review", mode = "v" },
-  { "<leader>af", "<cmd>CopilotChatFix<cr>", desc = "CopilotChat Fix", mode = "v" },
-  { "<leader>ao", "<cmd>CopilotChatOptimize<cr>", desc = "CopilotChat Optimize", mode = "v" },
-  { "<leader>ad", "<cmd>CopilotChatDocs<cr>", desc = "Generate Docs", mode = "v" },
-  { "<leader>aT", "<cmd>CopilotChatTests<cr>", desc = "Generate Test", mode = "v" },
-  { "<leader>ac", "<cmd>CopilotChatCommit<cr>", desc = "Generate Commit Message", mode = "n" },
-  { "<leader>ac", "<cmd>CopilotChatCommit<cr>", desc = "Generate Commit Message for selecction", mode = "v" },
-
-    -- -- ChatGPT group
-    --
-
   -- Minty and Volt
   { "<leader>v", group = "Volt" },
   { "<leader>vs", "<cmd>Shades<cr>", desc = "Shades", mode = "n" },

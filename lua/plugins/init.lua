@@ -137,53 +137,6 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    lazy = true,
-    config = function()
-      require('copilot').setup({
-        autostart = false,
-        panel = {
-          enabled = false,
-          auto_refresh = true,
-          keymap = {
-            accept = "<CR>",
-            jump_prev = "[[",
-            jump_next = "]]",
-            refresh = "gr",
-            open = "<M-CR>",
-          },
-        },
-        suggestion = {
-          enabled = false,
-          auto_trigger = true,
-          keymap = {
-            accept = "<M-l>",
-            prev = "<M-[>",
-            next = "<M-]>",
-            dismiss = "<C-]>",
-          },
-        },
-      })
-    end,
-  },
-
-  {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    lazy = true,
-    config = function()
-      require("copilot_cmp").setup({
-        formatters = {
-          label = require("copilot_cmp.format").format_label_text,
-          insert_text = require("copilot_cmp.format").format_insert_text,
-          preview = require("copilot_cmp.format").deindent,
-        },
-      })
-    end
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     config = function()
       require "configs.cmp"
@@ -314,23 +267,6 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    lazy = false,
-    dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    build = "make tiktoken", -- Only on MacOS or Linux
-    opts = {
-      -- See Configuration section for options
-    },
-    -- See Commands section for default commands if you want to lazy load on them
-    config = function()
-      require "configs.copilot-chat"
-    end,
-
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
