@@ -304,5 +304,14 @@ return {
     config = function()
       require "configs.ufo"
     end,
+  },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+    opts = {
+      explorer = {
+        auto_open_on_cursor = true,
+      },
+    },
   }
 }

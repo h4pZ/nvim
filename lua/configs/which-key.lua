@@ -154,6 +154,7 @@ require("which-key").add({
   { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit", mode = "n" },
   { "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff", mode = "n" },
   { "<leader>gD", "<cmd>wincmd p | q<cr>", desc = "Close Diff", mode = "n" },
+  { "<leader>gC", "<cmd>CodeDiff<cr>", desc = "CodeDiff", mode = "n" },
 
   -- LSP group
   { "<leader>l", group = "LSP" },
