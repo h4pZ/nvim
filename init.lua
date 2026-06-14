@@ -43,5 +43,3 @@ end)
 
 local custom_hl = require("configs.custom-hl")
 custom_hl.set_custom_hl()
-
--- test
