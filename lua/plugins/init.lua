@@ -164,7 +164,7 @@ return {
   },
 
   {
-    "norcalli/nvim-colorizer.lua",
+    "catgoose/nvim-colorizer.lua",
     lazy = false,
     config = function()
       require "configs.nvim-colorizer"

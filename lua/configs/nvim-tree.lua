@@ -131,10 +131,6 @@ require("nvim-tree").setup {
     update_cwd = true,
     ignore_list = {},
   },
-  system_open = {
-    cmd = nil,
-    args = {},
-  },
   filters = {
     dotfiles = true,
     custom = {},
