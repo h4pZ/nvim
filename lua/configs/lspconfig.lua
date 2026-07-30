@@ -1,7 +1,7 @@
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "html", "cssls", "pyrefly", "ruff", "clangd", "rust_analyzer", "svelte",
+local servers = { "html", "cssls", "ruff", "clangd", "rust_analyzer", "svelte",
   "gopls", "golangci_lint_ls", "ty" }
 
 

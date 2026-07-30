@@ -23,7 +23,11 @@ return {
       ensure_installed = {
         "lua-language-server", "stylua",
         "html-lsp", "css-lsp", "prettier",
-        "pyrefly",
+        "ty",
+        -- On Arch golangci-lint also comes from pacman; kept here so the
+        -- config bootstraps on machines without it (e.g. mac).
+        "golangci-lint", "golangci-lint-langserver",
+        "codelldb",
       },
     },
   },
@@ -51,6 +55,8 @@ return {
       ensure_installed = {
         "vim", "lua", "vimdoc",
         "html", "css", "python",
+        "go", "gomod", "gosum", "gowork",
+        "c", "cpp",
       },
     },
   },
@@ -99,6 +105,14 @@ return {
     end,
   },
 
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    config = function()
+      require("dap-go").setup()
+    end,
+  },
+
   { "nvim-neotest/nvim-nio" },
 
   {
@@ -106,6 +120,24 @@ return {
     lazy = false,
     config = function()
       require "configs.dap-ui"
+    end,
+  },
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      -- adapters
+      "nvim-neotest/neotest-python",
+      "fredrikaverpil/neotest-golang",
+      "alfaix/neotest-gtest",
+    },
+    ft = { "python", "go", "c", "cpp" },
+    config = function()
+      require "configs.neotest"
     end,
   },
 

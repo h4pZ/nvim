@@ -115,9 +115,25 @@ require("which-key").add({
   { "<leader>dp", "<cmd>lua require'dap'.pause.toggle()<cr>", desc = "Pause", mode = "n" },
   { "<leader>dq", "<cmd>lua require'dapui'.toggle()<cr>", desc = "Toggle DAP UI", mode = "n" },
   { "<leader>dT", "<cmd>lua require'dap'.terminate()<cr>", desc = "Terminate Session", mode = "n" },
-  { "<leader>dm", "<cmd>lua require'dap-python'.test_method()<cr>", desc = "Test Method", mode = "n" },
-  { "<leader>da", "<cmd>lua require'dap-python'.test_class()<cr>", desc = "Test Class", mode = "n" },
+  -- Test Method / Test Class removed: use <leader>rd (Debug Nearest Test),
+  -- which works for python, go and cpp alike.
   { "<leader>ds", "<cmd>lua require'dap-python'.debug_selection()<cr>", desc = "Debug Selection", mode = "n" },
+
+  -- Neotest group
+  { "<leader>r", group = "Test/Run" },
+  { "<leader>rr", "<cmd>lua require'neotest'.run.run()<cr>", desc = "Run Nearest", mode = "n" },
+  { "<leader>rf", "<cmd>lua require'neotest'.run.run(vim.fn.expand('%'))<cr>", desc = "Run File", mode = "n" },
+  { "<leader>ra", "<cmd>lua require'neotest'.run.run(vim.uv.cwd())<cr>", desc = "Run All (Suite)", mode = "n" },
+  { "<leader>rl", "<cmd>lua require'neotest'.run.run_last()<cr>", desc = "Run Last", mode = "n" },
+  { "<leader>rx", "<cmd>lua require'neotest'.run.stop()<cr>", desc = "Stop", mode = "n" },
+  { "<leader>rd", "<cmd>lua require'neotest'.run.run({ strategy = 'dap' })<cr>", desc = "Debug Nearest", mode = "n" },
+  { "<leader>rs", "<cmd>lua require'neotest'.summary.toggle()<cr>", desc = "Summary Sidebar", mode = "n" },
+  { "<leader>ro", "<cmd>lua require'neotest'.output.open({ enter = true, auto_close = true })<cr>",
+    desc = "Output Float", mode = "n" },
+  { "<leader>rp", "<cmd>lua require'neotest'.output_panel.toggle()<cr>", desc = "Output Panel", mode = "n" },
+  { "<leader>rw", "<cmd>lua require'neotest'.watch.toggle(vim.fn.expand('%'))<cr>", desc = "Toggle Watch", mode = "n" },
+  { "<leader>rn", "<cmd>lua require'neotest'.jump.next({ status = 'failed' })<cr>", desc = "Next Failed", mode = "n" },
+  { "<leader>rN", "<cmd>lua require'neotest'.jump.prev({ status = 'failed' })<cr>", desc = "Prev Failed", mode = "n" },
 
   -- Neogen group
   { "<leader>n", group = "Neogen" },
